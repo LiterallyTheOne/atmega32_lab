@@ -4,4 +4,14 @@
 format: jb-book
 root: intro
 chapters:
-- file: notes
+  - file: session_1
+  - file: session_2
+  - file: session_3
+  - file: session_4
+  - file: session_5
+  - file: session_6
+  - file: session_7
+  - file: session_8
+  - file: session_9
+  - file: session_10
+  - file: notes
