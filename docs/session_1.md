@@ -1,8 +1,10 @@
 # Session 1: Introduction
 
-## NSK108 
+## NSK108
 
 ## Atmega32
+
+## jumper
 
 ## ProgISP
 
@@ -15,5 +17,7 @@
 ### Auto
 
 ## Code vision AVR
+
+### Create a new project
 
 ## Hello world
