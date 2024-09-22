@@ -33,14 +33,14 @@ and industrial automation due to its low power
 consumption and ease of use.
 
 * 32 KB of flash memory
-  * non-volatile
-  * Where our program is stored
+    * non-volatile
+    * Where our program is stored
 * 2 KB of SRAM
-  * volatile 
-  * Where our variables, stack operations and buffer is stored
+    * volatile
+    * Where our variables, stack operations and buffer is stored
 * 1 KB of EEPROM
-  * non-volatile 
-  * Config that we want it to remain 
+    * non-volatile
+    * Config that we want it to remain
 * 32 general-purpose I/O pins
 * 8-channel 10-bit ADC
 * 3 timers (one 8-bit, two 16-bit)
@@ -51,6 +51,7 @@ consumption and ease of use.
 In the picture above, you can see the pins on
 ATmega32.
 There are 32 geneal-purpose I/O pins:
+
 * PA
 * PB
 * PC
@@ -64,23 +65,76 @@ All of these 32 pins can be set as an output or an input.
 
 ## jumper
 
+A removable connector that is used to connect to pins
+on the board. There is an example of a jumper in the picture
+below.
+
 ![jumper](figures/jumper.jpg)
+
+In this board most of the time there are 3 positions that
+you can put a jumper on:
+
+* on
+* off
+* none
+
+The picture below shows the position of
+a jumper in "on" position in "JP1".
 
 ![jumper_on](figures/jumper_on.jpg)
 
+Also, The picture below shows the position of
+a jumper in "off" position in "JP1".
+
 ![jumper_off](figures/jumper_off.jpg)
+
+And lastly, The picture below has no jumper in "JP1".
 
 ![jumper_none](figures/jumper_none.jpg)
 
 ## ProgISP
 
+The application that we are using to program our compiled
+code to our microcontroller is "ProgISP". In the picture
+below there is an example of the application.
+
+![ProgISP](figures/progisp.jpg)
+
+First we should make sure that our chipset is selected
+to `ATmega32`. Second we should press that 3 dots on the
+right side of `Auto`. Then a window like the picture below
+would show up. there are some changes that we should do
+on that window which are:
+
+* `CKSEL0`: 0
+* `CKSEL2`: 1
+* `JTAGEN`: 1
+
+After doing these steps, make sure that `LowValue` is
+equal to `E4` and `HighValue` is equal to `D9`.
+
+![ProgISP setup](figures/progisp_setup.jpg)
+
 ### Erase
+
+removes the code that is programmed.
 
 ### Load Flash
 
+Loads the `.hex` file that we compiled.
+
 ### Write Flash
 
+Writes the loaded flash to the chip.
+
 ### Auto
+
+Does the following things in order:
+* Erase
+* Write flash
+* Verify flash
+* Write Fuse
+* Lock chip
 
 ## Code vision AVR
 
