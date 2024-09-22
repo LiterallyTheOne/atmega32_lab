@@ -4,6 +4,8 @@
 
 ## Create numbers
 
+## Define variables in first block
+
 ## Show numbers on 7seg
 
 ## Delay
