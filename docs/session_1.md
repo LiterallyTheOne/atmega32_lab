@@ -181,8 +181,8 @@ and all the other 3 the same).
 ## Hello world
 
 Get the [hello_world.hex](../hex_example/hello_world.hex) then
-load it on `ProgISP` and write it on the chipset.
-The output like the image below should be displayed.
+load it on `ProgISP` and press `Auto`.
+The output should be displayed like the image below.
 If not remove the power supply and reconnect it again.
 
 ![Hello world](figures/hello_world.jpg)
