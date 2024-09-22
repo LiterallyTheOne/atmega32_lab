@@ -148,19 +148,29 @@ To create a new project you can simpy go to File->New
 Then a window like the window below will show up.
 for file type, select `Project` then press `OK`.
 
+![CodeVisionAVR new project](figures/codevision_new_project.jpg)
+
 After that, a window like the picture below will show
 up that you should choose yes which means that you want
 to use CodeWizardAVR.
 
+![CodeVisionAVR yes](figures/codevision_codewizard_yes.jpg)
+
 Then in the next window select the first option which
 has the `ATmega` chip on it.
+
+![CodeVisionAVR chip](figures/codevision_codewizard_wich_chip.jpg)
 
 After that in the `Chip` section in the `Chip` part
 select `ATmega32`.
 
+![CodeWizardAVR](figures/codevision_codewizard.jpg)
+
 For the next step you should click on the **gear** logo
 on top of the window which does the following job: 
 *generate program, save and exit*
+
+![CodeWizardAVR gear](figures/codevision_codewizard_gear.jpg)
 
 Choose the path that you want to save your project.
 Then on the 3 according window put a name that you 
