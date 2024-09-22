@@ -14,3 +14,4 @@
 | f9         | Compile   |
 | Shift + f9 | Build     |
 | Ctrl + f9  | Build all |
+| Ctrl + N   | New       |
