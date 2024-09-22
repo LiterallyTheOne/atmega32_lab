@@ -117,7 +117,7 @@ equal to `E4` and `HighValue` is equal to `D9`.
 
 ### Erase
 
-removes the code that is programmed.
+Removes the code that is programmed.
 
 ### Load Flash
 
