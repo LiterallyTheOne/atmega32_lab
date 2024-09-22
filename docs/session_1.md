@@ -136,8 +136,36 @@ Does the following things in order:
 * Write Fuse
 * Lock chip
 
-## Code vision AVR
+## CodeVisionAVR
+
+CodeVisionAVR is an IDE for programming AVR microcontrollers.
+We are using CodeVisionAVR in this course.
 
 ### Create a new project
+
+To create a new project you can simpy go to File->New 
+(or press Ctrl+N).
+Then a window like the window below will show up.
+for file type, select `Project` then press `OK`.
+
+After that, a window like the picture below will show
+up that you should choose yes which means that you want
+to use CodeWizardAVR.
+
+Then in the next window select the first option which
+has the `ATmega` chip on it.
+
+After that in the `Chip` section in the `Chip` part
+select `ATmega32`.
+
+For the next step you should click on the **gear** logo
+on top of the window which does the following job: 
+*generate program, save and exit*
+
+Choose the path that you want to save your project.
+Then on the 3 according window put a name that you 
+want to be the name of your source file, project and
+code wizard project (I mostly put the names of the directory
+and all the other 3 the same).
 
 ## Hello world
