@@ -133,13 +133,68 @@ DDRC = 0xF0; // 0b11110000
 
 ## Create numbers
 
-## Show numbers on 7seg
+As we said:
+
+* `0`: `light on`
+* `1`: `light off`
+
+So if we combine them together we can create numbers.
+for example for number `0` we have:
+
+* `0`: `0b11000000`, `0xC0`
+
+Now you should find the other numbers.
+
+## Put numbers in an array
+
+In order to store the numbers we can define
+an array like this:
+
+```c
+ch numbers[10]=
+    {
+        0xC0,
+        ...
+    };
+
+```
 
 ## Delay
 
+To be able to see the numbers for some time
+We use `delay_ms`.
+In order to do so, we first should import it like this:
+
+```c
+#include <delay.h>
+```
+
+Then we can use `delay_ms` in our code that makes a 
+delay in **milliseconds**. For example `delay_ms(2000)`,
+makes a delay for `2 second`.
+
+
 ## Counter
+
+Now that we have stored all the numbers in an array,
+and we know how to use `delay_ms`, it is time to
+make a countdown.
 
 ## Buzzer config
 
+![buzzer config](figures/atmega32_buzzer.jpg)
+
+As you can see on the picture above,
+buzzer is connected to the `0` pin of `PORTC`.
+In order to work with buzzer we should change
+the `PORTC.0` as an output.
+After that we can control our buzzer like below:
+
+* `1`: `activate`
+* `0`: `deactivate`
+
 ## Add buzzer
+
+Now you can add a buzzer sound to the end of the counter
+with changing only some simple codes.
 
