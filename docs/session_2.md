@@ -87,7 +87,7 @@ For example:
 
 ![ATmega32 7segments 4](figures/atmega32_7segments_4.jpg)
 
-# 7seg initialization
+## 7seg initialization
 
 ## Create numbers
 
