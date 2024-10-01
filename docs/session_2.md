@@ -79,15 +79,57 @@ For example:
 
 ## Using hex to initialize our pins
 
-## Initialization
+Now if we want to initialize our pins we can do
+something like this:
+
+```c
+PORTB = 0x00;
+DDRB = 0xFF;
+```
+
+Which means all the Directions of port `B` are set
+to outputs and all the initialize values are set
+to `0`.
 
 ## 7seg config
 
+As you can see on the picture below,
+All the leds in each 7segments are connected
+to each pins of `PORTB`.
+
 ![ATmega32 7segments](figures/atmega32_7segments.jpg)
+
+As it is illustrated in the image below,
+To disable or enable each 7segment, we can
+use [4, 7] pins in `PORTC`.
 
 ![ATmega32 7segments 4](figures/atmega32_7segments_4.jpg)
 
+
+:::{important}
+All the pins in this experiment are
+getting **activated** when we put `0`
+in them.
+:::
+
+
 ## 7seg initialization
+
+As you can see in the **7seg config** we only need to
+control `PORTB` and pins from [4, 7] of `PORTC`.
+To do so we should put those pin as outputs also
+we put 0 for initialization value. The result would be
+something like this:
+
+```c
+
+PORTB = 0x00;
+DDRB = 0xFF; // 0b11111111
+
+PORTC = 0x00;
+DDRC = 0xF0; // 0b11110000
+
+```
 
 ## Create numbers
 
