@@ -7,7 +7,7 @@
 ## Create a new CodeVisionAVR project
 
 We should make a new CodeVisionAVR project
-with `ATmega32` selected as the cip.
+with `ATmega32` selected as the chip.
 Then we remove all the comments and all the
 initialization, because we want to make
 an initialization of our own.
@@ -71,7 +71,7 @@ For example:
 
 We can use `0x` to declare a number in hex format.
 Range of a hex number is between `[0 to 15]` which
-is presented like this: `1 2 3 4 5 6 7 8 9 A B C D E F`.
+is presented like this: `0 1 2 3 4 5 6 7 8 9 A B C D E F`.
 For example:
 
 * `0xF`= `15`
