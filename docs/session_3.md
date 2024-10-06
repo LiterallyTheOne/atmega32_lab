@@ -240,5 +240,3 @@ for(i=0; i<100; i++){
 The reason that we can't put a delay between these two,
 is that we want each 7segment to have its value.
 If we put delay only the last number will show.
-
-## String
