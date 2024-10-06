@@ -240,3 +240,10 @@ for(i=0; i<100; i++){
 The reason that we can't put a delay between these two,
 is that we want each 7segment to have its value.
 If we put delay only the last number will show.
+
+## Put date
+
+Now we are ready to put dates on our 7segments.
+We want `year`, `month` and `day` show on the 7segments
+individually for a period of time.
+
