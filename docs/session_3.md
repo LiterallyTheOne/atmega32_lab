@@ -151,6 +151,27 @@ void f1(int idx, int number){
 }
 ```
 
+then I make sure if the number is not in the range
+I put nothing in it.
+
+```c
+void f1(int idx, int number){
+
+    PORTC.7 = 1;
+    PORTC.6 = 1;
+    PORTC.5 = 1;
+    PORTC.4 = 0;
+
+    if(number < 10 && number > -1){
+        PORTB = numbers[number];
+    }else{
+        PORTB = 0xFF;
+    }
+    delay_ms(5);
+
+}
+```
+
 Then I put the initial value of each `pin` to one, then I
 write a `switch case` for the different indexes.
 
@@ -215,7 +236,6 @@ for(i=0; i<100; i++){
     f2(2, 4);
 }
 ```
-
 
 The reason that we can't put a delay between these two,
 is that we want each 7segment to have its value.
