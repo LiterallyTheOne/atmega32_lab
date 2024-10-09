@@ -35,7 +35,7 @@ In case you missed it here are the numbers:
   "1": "0xF9",
   "2": "0xA4",
   "3": "0xB0",
-  "4": "0xB0",
+  "4": "0x99",
   "5": "0x92",
   "6": "0x82",
   "7": "0xF8",
