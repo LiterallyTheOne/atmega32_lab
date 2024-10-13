@@ -25,12 +25,27 @@
 ### `MCUCR`
 
 `MCUCR` stands for `MCU Control Register`.
+`ISC` stands for `Interrupt Sense Control`.
 
 | bit           | 7   | 6   | 5   | 4   | 3     | 2     | 1     | 0     | 
 |---------------|-----|-----|-----|-----|-------|-------|-------|-------|
 | name          | SE  | SM2 | SM1 | SM0 | ISC11 | ISC10 | ISC01 | ISC00 | 
 | Read/Write    | R/W | R/W | R/W | R/W | R/W   | R/W   | R/W   | R/W   | 
 | initial value | 0   | 0   | 0   | 0   | 0     | 0     | 0     | 0     | 
+
+| ISC11 | ISC10 | Description                                                |
+|-------|-------|------------------------------------------------------------|
+| 0     | 0     | The low level of INT1 generates an interrupt request.      |
+| 0     | 1     | Any logical change on INT1 generates an interrupt request. |
+| 1     | 0     | The falling edge of INT1 generates an interrupt request.   |
+| 1     | 1     | The rising edge of INT1 generates an interrupt request.    |
+
+| ISC01 | ISC00 | Description                                                |
+|-------|-------|------------------------------------------------------------|
+| 0     | 0     | The low level of INT1 generates an interrupt request.      |
+| 0     | 1     | Any logical change on INT1 generates an interrupt request. |
+| 1     | 0     | The falling edge of INT1 generates an interrupt request.   |
+| 1     | 1     | The rising edge of INT1 generates an interrupt request.    |
 
 ### `MCUCSR`
 
