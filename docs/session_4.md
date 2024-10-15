@@ -68,6 +68,17 @@ Another example with `PORTB`:
 PORTB |= 1 << 2;
 ```
 
+To make a value of a certain index of a number,
+we can use a code like this.
+
+
+```c
+PORTB &= ~(1 << 3);
+// 1 << 2 == 0b100
+// ~(1 << 2) == 0b011
+```
+
+
 ## Interrupt
 
 ### `GICR`
