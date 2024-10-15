@@ -299,6 +299,7 @@ TCCR0 |= 1 << CS02;
 
 `TCNT` stands for `Timer/Counter Register`.
 Any time a clock reaches the timer, this increments.
+It has only 8bits so it can only reach to `255`.
 
 ### `OCR0`
 
