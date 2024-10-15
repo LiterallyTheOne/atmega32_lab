@@ -71,13 +71,11 @@ PORTB |= 1 << 2;
 To make a value of a certain index of a number,
 we can use a code like this.
 
-
 ```c
 PORTB &= ~(1 << 3);
 // 1 << 2 == 0b100
 // ~(1 << 2) == 0b011
 ```
-
 
 ## Interrupt
 
@@ -124,10 +122,10 @@ GICR |= 1 << INT1;
 
 | ISC01 | ISC00 | Description                                                |
 |-------|-------|------------------------------------------------------------|
-| 0     | 0     | The low level of INT1 generates an interrupt request.      |
-| 0     | 1     | Any logical change on INT1 generates an interrupt request. |
-| 1     | 0     | The falling edge of INT1 generates an interrupt request.   |
-| 1     | 1     | The rising edge of INT1 generates an interrupt request.    |
+| 0     | 0     | The low level of INT0 generates an interrupt request.      |
+| 0     | 1     | Any logical change on INT0 generates an interrupt request. |
+| 1     | 0     | The falling edge of INT0 generates an interrupt request.   |
+| 1     | 1     | The rising edge of INT0 generates an interrupt request.    |
 
 ### `MCUCSR`
 
