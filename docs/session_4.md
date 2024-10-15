@@ -2,6 +2,8 @@
 
 ## Goal
 
+![LED interrupt](figures/led_interrupt_1.gif)
+
 ## Bonus point
 
 `interrupt0`.
