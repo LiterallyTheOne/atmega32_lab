@@ -4,6 +4,8 @@
 
 ## Bonus point
 
+`interrupt0`.
+
 ## LEDs
 
 As you can see in the picture below **LEDs** in `nsk108` can
