@@ -83,13 +83,20 @@ PORTB &= ~(1 << 3);
 
 ### `GICR`
 
-`GICR` stands for `General Interrupt Control Register`
+`GICR` stands for `General Interrupt Control Register`.
 
 | bit           | 7    | 6    | 5    | 4 | 3 | 2 | 1     | 0    | 
 |---------------|------|------|------|---|---|---|-------|------|
 | name          | INT1 | INT0 | INT2 | - | - | - | IVSEL | IVCE | 
 | Read/Write    | R/W  | R/W  | R/W  | R | R | R | R/W   | R/W  | 
 | initial value | 0    | 0    | 0    | 0 | 0 | 0 | 0     | 0    | 
+
+To enable `Interrupt1` to work we put the value of the 7th index of `GICR` to 1,
+to do so we can use a code like this:
+
+```c
+GICR |= 1 << INT1;
+```
 
 ### `MCUCR`
 
@@ -128,7 +135,7 @@ PORTB &= ~(1 << 3);
 
 ### `GIFR`
 
-`GIFR` stands for `General Interrupt Flag Register`
+`GIFR` stands for `General Interrupt Flag Register`.
 
 | bit           | 7     | 6     | 5     | 4 | 3 | 2 | 1 | 0 | 
 |---------------|-------|-------|-------|---|---|---|---|---|
