@@ -81,6 +81,12 @@ PORTB &= ~(1 << 3);
 
 ## Interrupt
 
+Interrupt is a special signal.
+It tells the microcontroller to stop (halt)
+what he is doing right now and execute some
+special code.
+This special code is in a `Interrupt Service Routine Function`.
+
 ### `GICR`
 
 `GICR` stands for `General Interrupt Control Register`.
