@@ -183,5 +183,25 @@ We can use it like the code below:
 
 ### Interrupt Service Routine (ISR) function
 
+We can write a `Interrupt Service Routine function` like below:
+
+```c
+interrupt [NAME_OF_INTERRUPT] void name(void){
+
+// your code
+
+}
+```
+
+For example for `Interrupt1` we can write:
+
+```c
+interrupt [EXT_INT1] void ext_int1_isr(void){
+
+// your code
+
+}
+```
+
 ## Time Interrupt
 
