@@ -106,6 +106,8 @@ GICR |= 1 << INT1;
 
 `MCUCR` stands for `MCU Control Register`.
 `ISC` stands for `Interrupt Sense Control`.
+It basically controls when should an Interrupt occur.
+As you can see we can config our Interrupt to happen in different situations.
 
 | bit           | 7   | 6   | 5   | 4   | 3     | 2     | 1     | 0     | 
 |---------------|-----|-----|-----|-----|-------|-------|-------|-------|
@@ -130,6 +132,9 @@ GICR |= 1 << INT1;
 ### `MCUCSR`
 
 `MCUCSR` stands for `MCU Control and Status Register`.
+The only thing that we should know in this table is `ISC2`.
+This register can handle how `interrup2` will be triggerd
+(Falling edge or rising edge).
 
 | bit           | 7   | 6    | 5 | 4       | 3       | 2       | 1       | 0       | 
 |---------------|-----|------|---|---------|---------|---------|---------|---------|
@@ -140,6 +145,10 @@ GICR |= 1 << INT1;
 ### `GIFR`
 
 `GIFR` stands for `General Interrupt Flag Register`.
+When an interrupt happens, a corresponding index of
+this register will be set to 1.
+If we write 1 to any of the indexes manually, we
+can clear the flag.
 
 | bit           | 7     | 6     | 5     | 4 | 3 | 2 | 1 | 0 | 
 |---------------|-------|-------|-------|---|---|---|---|---|
@@ -149,9 +158,28 @@ GICR |= 1 << INT1;
 
 ### `#asm`
 
+`#asm` is used to write a direct `assembly` command.
+We need only 2 commands.
+One that **enables** global interrupts and one that
+**disables** them.
+
 #### `sei`
 
+`sei` enables the global interrupts.
+We can use it like the code below:
+
+```c
+#asm(sei)
+```
+
 #### `cli`
+
+`cli` disables the global interrupts.
+We can use it like the code below:
+
+```c
+#asm(cli)
+```
 
 ### Interrupt Service Routine (ISR) function
 
