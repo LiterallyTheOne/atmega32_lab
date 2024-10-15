@@ -85,6 +85,10 @@ what he is doing right now and execute some
 special code.
 This special code is in a `Interrupt Service Routine Function`.
 
+| Interrupt0 | Interrupt1 | Interrupt2 |
+|------------|------------|------------|
+| PORTD2     | PORTD3     | PORTB2     | 
+
 ### `GICR`
 
 `GICR` stands for `General Interrupt Control Register`.
