@@ -216,3 +216,58 @@ Like the gif in the **Goal** section.
 
 ## Time Interrupt
 
+`Time Interrupt` has a timer, when it reaches
+to a specific condition, an interrupt would occur.
+
+Atmega32 has 3 main timers.
+
+* `Timer0`: 8-bit
+* `Timer1`: 16-bit
+* `Timer2`: 8-bit
+
+We will be working with `Timer0`.
+
+### `TCCR0`
+
+`TCCR0` stands for `Timer/Counter Clock Sources`
+
+| bit           | 7    | 6     | 5     | 4     | 3     | 2    | 1    | 0    | 
+|---------------|------|-------|-------|-------|-------|------|------|------|
+| name          | FOC0 | WGM00 | COM01 | COM00 | WGM01 | CS02 | CS01 | CS00 |
+| Read/Write    | R/W  | R/W   | R/W   | R/W   | R/W   | R/W  | R/W  | R/W  | 
+| initial value | 0    | 0     | 0     | 0     | 0     | 0    | 0    | 0    | 
+
+| WGM00 | 	WGM01 | 	Timer0 mode selection bit         |
+|-------|--------|------------------------------------|
+| 0	    | 0      | 	Normal                            |
+| 0	    | 1	     | CTC (Clear timer on Compare Match) |
+| 1	    | 0      | 	PWM, Phase correct                |
+| 1	    | 1	     | Fast PWM                           |
+
+| CS02 | CS01 | CS00 | Description                                             |
+|------|------|------|---------------------------------------------------------|
+| 0    | 0    | 0    | No clock source (Timer/Counter stopped).                |
+| 0    | 0    | 1    | clkI/O/(No prescaling)                                  |
+| 0    | 1    | 0    | clkI/O/8 (From prescaler)                               |
+| 0    | 1    | 1    | clkI/O/64 (From prescaler)                              |
+| 1    | 0    | 0    | clkI/O/256 (From prescaler)                             |
+| 1    | 0    | 1    | clkI/O/1024 (From prescaler)                            |
+| 1    | 1    | 0    | External clock source on T0 pin. Clock on falling edge. |
+| 1    | 1    | 1    | External clock source on T0 pin. Clock on rising edge.  |
+
+### `TIMSK`
+
+`TIMSK` stands for `Timer/Counter Interrupt Mask Register`
+
+| bit           | 7     | 6     | 5      | 4      | 3      | 2     | 1     | 0     | 
+|---------------|-------|-------|--------|--------|--------|-------|-------|-------|
+| name          | OCIE2 | TOIE2 | TICIE1 | OCIE1A | OCIE1B | TOIE1 | OCIE0 | TOIE0 | 
+| Read/Write    | R/W   | R/W   | R/W    | R/W    | R/W    | R/W   | R/W   | R/W   | 
+| initial value | 0     | 0     | 0      | 0      | 0      | 0     | 0     | 0     | 
+
+### `OCR0`
+
+`OCR` stands for `Output Compare Register`.
+
+
+
