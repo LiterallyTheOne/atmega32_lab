@@ -24,7 +24,46 @@ and to turn it off we should put `0` on it.
 
 ## Shift
 
-## Change only one value
+We can shift a number, multiple times like below:
+
+```c
+number << how_many
+```
+
+for example:
+
+```c
+int a = 0b10; // 2
+int b = 2;
+
+int c = a << b; 
+// c = 8
+
+```
+
+## Change only the value of one index
+
+So that we know with shift we can only change one index
+of a number like below.
+
+```c
+number |= 1 << which_index;
+```
+
+For example:
+
+```c
+int a = 0b00100010; // 34
+int b = 2;
+
+a |= 1 << b; // 38
+```
+
+Another example with `PORTB`:
+
+```c
+PORTB |= 1 << 2;
+```
 
 ## Interrupt
 
