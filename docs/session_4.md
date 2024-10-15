@@ -6,6 +6,22 @@
 
 ## LEDs
 
+As you can see in the picture below **LEDs** in `nsk108` can
+be controlled by jumper in `JP2`.
+
+![nsk108 LEDs](figures/nsk108_LEDs.jpg)
+
+In the table below, you can see which one is connected to which pin of `PORTB`.
+
+| d1      | d2      | d3      | d4      | d5      | d6      | d7      | d8      |
+|---------|---------|---------|---------|---------|---------|---------|---------|
+| PORTB.7 | PORTB.6 | PORTB.5 | PORTB.4 | PORTB.3 | PORTB.2 | PORTB.1 | PORTB.0 |
+
+:::{note}
+To turn a LED on, we should put `1` on it
+and to turn it off we should put `0` on it.
+:::
+
 ## Shift
 
 ## Change only one value
