@@ -203,5 +203,12 @@ interrupt [EXT_INT1] void ext_int1_isr(void){
 }
 ```
 
+## Write a counter on LEDs and control them with `Interrupt1` 
+
+Now we can write a counter on LEDs which is incrementing until
+we press `Interrupt1`.
+Then when we press `Interrupt1` again, incrementing continues.
+Like the gif in the **Goal** section.
+
 ## Time Interrupt
 
