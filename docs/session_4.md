@@ -6,8 +6,11 @@
 
 ## Bonus point
 
-`interrupt0`.
-`Dance`.
+![LED interrupt 2](figures/led_interrupt_2.gif)
+
+* `Interrupt0`.
+* `Dance`.
+* `Timer1`.
 
 ## LEDs
 
