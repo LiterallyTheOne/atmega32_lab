@@ -186,3 +186,20 @@ each key is connected to `ATmega32` is shown.
 | col0 | col1 | col2 | col3 | row0 | row1 | row2 | row3 |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | PA.0 | PA.1 | PA.2 | PA.3 | PA.4 | PA.5 | PA.6 | PA.7 |
+
+
+:::{important}
+We put `1` in all the pins.
+:::
+
+### Detect one key (row0, col0) 
+
+In order to detect which key is pressed we start with one
+key.
+
+![Keypad nsk108 one key](figures/keypad_nsk108_1.jpg)
+
+As you can see on the image above
+if I put `0` in `PORTA.4`:
+* If the key is pressed: `PINA.0` = 0
+* If the key is **not** pressed: `PINA.0` = 1
