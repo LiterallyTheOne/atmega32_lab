@@ -164,5 +164,14 @@ Example:
 lcd_putsf();
 ```
 
+## `PIN`
+
+We use `PIN` variable to read data of a `pin`.
+
+For example:
+
+```c
+char x = PINA;
+```
 
 ## Keypad
