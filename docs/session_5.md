@@ -106,8 +106,63 @@ lcd_putchar('p');
 
 ### `lcd_puts`
 
+Puts a `string` in a current position of the `LCD`.
+If it exceeds, goes back to the `0` column.
+
+Synopsis:
+
+```c
+lcd_puts(char *str);
+```
+
+Arguments:
+
+* `str`: String that we want to write on the `LCD` 
+
+Example:
+
+```c
+lcd_puts("hello");
+```
+
 ### `lcd_putsf`
 
+
+Puts a `string` in a current position of the `LCD` that is in the flash.
+If it exceeds, goes back to the `0` column.
+
+Synopsis:
+
+```c
+lcd_puts(char flash *str);
+```
+
+Arguments:
+
+* `str`: String that we want to write on the `LCD` 
+
+Example:
+
+```c
+lcd_putsf("hello");
+```
+
 ### `lcd_clear`
+
+
+Clears the `LCD`
+
+Synopsis:
+
+```c
+lcd_clear();
+```
+
+Example:
+
+```c
+lcd_putsf();
+```
+
 
 ## Keypad
