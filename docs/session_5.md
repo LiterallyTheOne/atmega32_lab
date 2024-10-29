@@ -1,5 +1,13 @@
 # Session 5: LCD and keypad
 
+## Goal
+
+Show the input of keypad on LCD.
+
+## Bonus point
+
+Show a 4 digit number on 7segements.
+
 ## LCD
 
 LCD is used to write parameters and status.
