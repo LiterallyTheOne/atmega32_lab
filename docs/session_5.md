@@ -25,6 +25,8 @@ It has 16-pins.
 | ------- | ---------- |
 | LED 5V+ | LED Ground |
 
+![LCD108 ATmega32](figures/lcd108_atmega32.jpg)
+
 ### LCD library and header file
 
 For `NSK108` the have provided us a head file and a library.
