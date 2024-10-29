@@ -177,3 +177,12 @@ char x = PINA;
 ```
 
 ## Keypad
+
+![Keypad nsk108](figures/keypad_nsk108.jpg)
+
+As you can see on the image above, the way that
+each key is connected to `ATmega32` is shown.
+
+| col0 | col1 | col2 | col3 | row0 | row1 | row2 | row3 |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| PA.0 | PA.1 | PA.2 | PA.3 | PA.4 | PA.5 | PA.6 | PA.7 |
