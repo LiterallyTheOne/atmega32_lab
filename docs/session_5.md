@@ -86,6 +86,24 @@ lcd_gotoxy(5, 1);
 
 ### `lcd_putchar`
 
+Puts a `charachter` in a current position of the `LCD`.
+
+Synopsis:
+
+```c
+lcd_putchar(char c);
+```
+
+Arguments:
+
+* `c`: Character we want to write on the `LCD` 
+
+Example:
+
+```c
+lcd_putchar('p');
+```
+
 ### `lcd_puts`
 
 ### `lcd_putsf`
