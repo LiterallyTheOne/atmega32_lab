@@ -96,7 +96,7 @@ lcd_putchar(char c);
 
 Arguments:
 
-* `c`: Character we want to write on the `LCD` 
+* `c`: Character that we want to write on the `LCD` 
 
 Example:
 
