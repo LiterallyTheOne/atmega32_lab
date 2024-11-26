@@ -1,5 +1,31 @@
 # Session 9: Time Interuppt
 
+## Goal
+
+![LED Timer Interrupt](figures/led_timer_interrupt.gif)
+
+
+* TIMER0: Kight pattern
+* TIMER2: Shift pattern
+* INT0: Control the speed
+* INT1: Stop
+
+## Bonus
+
+* TIMER1: instead of any of them
+* TIMER1 does another patern
+
+## Progam a simple shift pattern on LED
+
+First step is to program a simple shift pattern on LED that we learned  
+on **session_4**.
+
+## Add external intrrupt to it
+
+Then we add an `External Interupt` to it which we also learned in
+**session_4**
+
+
 ## Time Interrupt
 
 `Time Interrupt` has a timer, when it reaches
@@ -12,6 +38,57 @@ Atmega32 has 3 main timers.
 * `Timer2`: 8-bit
 
 We will be working with `Timer0`.
+
+### How `timer interrupt` works
+
+The `Timer Interrupt` has a counter that, each time a clock reaches it,
+it would increase.
+We can confing `Timer Interrupt` to send an `Interrupt` in this two 
+conditions:
+
+* When it overflows
+* When it reaches to an specefic number
+
+We can access all of them by some registers.
+
+* Counter: `TCNT`
+* Condition: `OCR`
+
+if the mode is on `overflow` there would be an interrupt each time
+the counter exceeds 255.
+You can see in the image below that every time
+we reach 256, an `interrupt` would be sent.
+
+![Timer Overflow](figures/timer_overflow.png)
+
+If we put it on `compare` mode, and set `OCR` to 100,
+we would have an image like below:
+
+![Timer Compare](figures/timer_compare.png)
+
+As you can see the image above, still there would be an interrupt
+every 256 clock.
+We can set a register to prevent that from happening.
+If we reach to `OCR` then `TCNT` becomes `0` again.
+It would like the image below.
+
+![Timer Compare OCR](figures/timer_compare_ocr.png)
+
+By knowing that we can calulate how many times an interrupt
+would be sent.
+For example, if our microcontroller works with `8.0Mhz` frequency, which is
+`0.125us`,
+and we set `OCR` to `100`, we will be having an interrupt
+every `12.5us`.
+
+We can control when to send a clock to a `Timer Interrupt` as well.
+We call that `pre-scaler`.
+`pre-scaler` tells the microcontroller on how many clock of the microcontroller,
+`timer` should get a clock.
+It can be set only to this values: `1 8 64 256 1024`.
+For example, if we set our `pre-scaler` to `8` and our 
+microcontroller works with `8.0Mhz` frequency,
+`timer` will work with `1.0Mhz` frequency.
 
 ### `TIMSK`
 
@@ -95,5 +172,6 @@ If `TCNT0` reaches the value of `OCR0`,
 an interrupt would occur.
 
 
+## Replace delay with `Time Interrupt`
 
 
