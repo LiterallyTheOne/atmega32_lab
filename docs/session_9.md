@@ -171,7 +171,38 @@ The value of `TCNT0` gets compare with `OCR0`.
 If `TCNT0` reaches the value of `OCR0`,
 an interrupt would occur.
 
+### Timer Interrupt function
+
+We can define a function for timer interrupt, like below:
+
+* TIM0_COMP
+  * TIM0: Timer 0   
+  * COMP: Compare
+* TIM0_OVF
+  * TIM0: Timer 0   
+  * OVF: Overflow
+
+```c
+interrupt [TIM0_COMP] void timer0_comp_isr(void){
+
+}
+```
 
 ## Replace delay with `Time Interrupt`
+
+Now we know when a `Timer interrupt` happens.
+So we can put the code that we wrote for the shifter on it.
+Then we can remove the delay.
+
+## Make the Shifter pattern to Kight pattern
+
+We only need `direction` and some `if`s to write that.
+
+## Setup another timer and put a Shifter pattern on it
+
+Setup another timer for example `TIMER2` and put a simple shifter
+on it.
+to show the result of both of them we can `|` the result of both in
+`PORTB`.
 
 
