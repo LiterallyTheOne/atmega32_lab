@@ -132,7 +132,7 @@ We need to compare with the `OCR0` register, so we set
 `WMG01` index to 1.
 
 ```c
-TCCR0 |= 1 << WMG01
+TCCR0 |= 1 << WGM01
 ```
 
 | CS02 | CS01 | CS00 | Description                                             |
@@ -151,11 +151,10 @@ the `timer0`.
 For example if our chip is running with `8Mhz`, if we put our
 `pre-scaler` value to 8, the `timer0` would get `1Mhz` of frequency.
 We can control `pre-scaler` as shown in the table above.
-For example, the code below puts the pre-scaler to `1024`.
+For example, the code below puts the pre-scaler to `8`.
 
 ```c
-TCCR0 |= 1 << CS00;
-TCCR0 |= 1 << CS02;
+TCCR0 |= 1 << CS01;
 ```
 
 ### `TCNT0`
