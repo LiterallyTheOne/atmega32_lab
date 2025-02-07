@@ -3,6 +3,10 @@
 This repository contains all the resources, codes and
 materials covered during class.
 
+## Previous semesters
+
+* [Fall 2024](https://github.com/LiterallyTheOne/atmega32_lab/tree/Fall_2024)
+
 ## Resources
 
 To access the resources you can use this link
