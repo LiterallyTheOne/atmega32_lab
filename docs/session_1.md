@@ -167,3 +167,8 @@ void loop()
 {
 }
 ```
+
+In setup function, we are initializing the pins and the components that we are using.
+In loop function, we are writing the main code that we want to run repeatedly (it is like a `while True`).
+To make the hex file, we can simply click on the "tick" icon on the bottom of the screen.
+Then the hex file will be created in the ".pio/build/ATmega32" folder.
