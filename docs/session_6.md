@@ -1,1 +1,1 @@
-# Session 6: simple calculator
+# Session 6

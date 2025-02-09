@@ -1,1 +1,1 @@
-# Session 7: advanced calculator
+# Session 7
