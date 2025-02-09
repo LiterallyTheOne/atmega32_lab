@@ -60,7 +60,7 @@ There are 32 geneal-purpose I/O pins:
 Each pin is connected to a component on the board
 which we are going to explain them in the according
 lesson.
-All of these 32 pins can be set as an output or an input.
+All of these 32 pins can be set as outputs or inputs.
 (using their DDR)
 
 ## jumper
