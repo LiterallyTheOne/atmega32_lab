@@ -172,3 +172,69 @@ In setup function, we are initializing the pins and the components that we are u
 In loop function, we are writing the main code that we want to run repeatedly (it is like a `while True`).
 To make the hex file, we can simply click on the "tick" icon on the bottom of the screen.
 Then the hex file will be created in the ".pio/build/ATmega32" folder.
+
+## A simple LED blink code
+
+To make a simple LED blink code, first we should put an LED on the board.
+To do that we do these steps:
+* Put an `led` (`Outputs`/`Leds`/`LED`) on the board.
+* Put a `fixed voltage` on the board.
+* Put a `ground` on the board.
+* Connect the `fixed voltage` to the `led`'s `anode` (the longest pin).
+* Connect the `ground` to the `led`'s `cathode` (the shortest pin).
+* Click on the `fixed volatage` to turn it on.
+* Run the simulation.
+
+So you should have something like this:
+
+![SimulIDE_LED](figures/SimulIDE_LED.png)
+
+Now we have a working LED on the board.
+Now let's put an `ATMega32` on the board and connect the `led` to the `ATMega32`.
+To do that we do these steps:
+
+* Put an `ATMega32` (`Micro`/`AVR`/`ATMega32`) on the board.
+* Connect the `fixed voltage` to the `Rst` of the `ATMega32`.
+* Connect the `anode` of the `LED` to the `PB0` of the `ATMega32`.
+* Conncet the `cathode` of the `LED` to the `ground`.
+
+So you should have something like this:
+
+![SimulIDE_LED_ATMega32](figures/SimulIDE_LED_ATMega32.png)
+
+Now let's write the code to make the `LED` blink.
+To do that we do these steps:
+
+* Create a new project in `PlatformIO` by selecting `ATMega32` as your board.
+* Write the code below in the `main.cpp` file.
+
+```cpp
+#include <Arduino.h>
+
+void setup()
+{
+    DDRB = 0x01;
+    PORTB = 0x01;
+}
+
+void loop()
+{
+    PORTB = 0x00;
+    delay(1000);
+    PORTB = 0x01;
+    delay(1000);
+}
+```
+
+* Click on the `tick` icon to make the hex file.
+* Go to SimulIDE and right click on `ATMega32` and select `Load HEX file`.
+* Select the hex file that you have created (.pio/ATMega32/frimware.hex) (you might need to select show hidden files).
+* Run the simulation.
+
+So it should be something like this:
+
+![SimulIDE_LED_ATMega32_blink](figures/SimulIDE_LED_ATMega32_blink.gif)
+
+
+
+
