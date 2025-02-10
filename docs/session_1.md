@@ -173,6 +173,22 @@ In loop function, we are writing the main code that we want to run repeatedly (i
 To make the hex file, we can simply click on the "tick" icon on the bottom of the screen.
 Then the hex file will be created in the ".pio/build/ATmega32" folder.
 
+## `avrdude`
+
+`avrdude` is a command-line tool that is used to program the hex file to the microcontroller.
+To install `avrdude` on `Ubuntu` you can simply run the command below:
+
+```bash 
+sudo apt install avrdude
+```
+
+Other linux distributions also contain avrdude that you can get them from their package manager.
+To program our code to the microcontroller, we can use the command below:
+
+```bash
+avrdude -c usbasp -p m32 -U flash:w:.pio/build/ATmega32/firmware.hex
+```
+
 ## A simple LED blink code
 
 To make a simple LED blink code, first we should put an LED on the board.
