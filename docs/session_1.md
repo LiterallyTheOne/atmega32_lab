@@ -236,9 +236,9 @@ void setup()
 void loop()
 {
     PORTB = 0x00;
-    delay(1000);
+    delay(500);
     PORTB = 0x01;
-    delay(1000);
+    delay(500);
 }
 ```
 
@@ -251,6 +251,11 @@ So it should be something like this:
 
 ![SimulIDE_LED_ATMega32_blink](figures/SimulIDE_LED_ATMega32_blink.gif)
 
+Now lets connect your board to our computer and upload our hex file using the code below:
+
+```bash
+avrdude -c usbasp -p m32 -U flash:w:.pio/build/ATmega32/firmware.hex
+```
 
 
 
