@@ -257,3 +257,7 @@ Now lets connect your board to our computer and upload our hex file using the co
 ```bash
 avrdude -c usbasp -p m32 -U flash:w:.pio/build/ATmega32/firmware.hex
 ```
+
+:::{important}
+Make sure the jumber (`JP2`) on the board is in the **on** position.
+:::
