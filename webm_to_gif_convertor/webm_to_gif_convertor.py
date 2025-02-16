@@ -1,8 +1,14 @@
+"""Convert a WebM video to a GIF file."""
+
 from moviepy.editor import VideoFileClip
 
 
 def main():
-    input_path = "/Users/ramin/ramin_programs/projects/atmega32_lab/docs/figures/SimulIDE_LED_ATMega32_blink.webm"
+    """main function"""
+    input_path = (
+        "/Users/ramin/ramin_programs/projects/atmega32_lab"
+        "/docs/figures/SimulIDE_LED_ATMega32_blink.webm"
+    )
 
     output_path = "output_video.gif"
 
