@@ -1,16 +1,14 @@
 # Atmega32 lab
 
-
 ```{tableofcontents}
 ```
-
 
 ## About Me
 
 * I'm Ramin Zarebidoky
 * I am a PhD student in Computer Engineering, specializing in Artificial Intelligence, at Yazd University.
-* Email: ramin.zarebidoky@stu.yazd.ac.ir
-* Gmail: ramin.zarebidoky@gmail.com
+* Email: [ramin.zarebidoky@stu.yazd.ac.ir](mailto:ramin.zarebidoky@stu.yazd.ac.ir)
+* Gmail: [ramin.zarebidoky@gmail.com](mailto:ramin.zarebidoky@gmail.com)
 * GitHub: @LiterallyTheOne
 
 ## About the course
@@ -25,8 +23,8 @@
 ## Assessment
 
 * For each session:
-    * 0.5: Presence
-    * 0.5: Class Work
+  * 0.5: Presence
+  * 0.5: Class Work
 * We have 10 content sessions: (10 marks)
 * There are some special sessions: (5 marks)
   * In these sessions, students are required to do some projects.
