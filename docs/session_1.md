@@ -33,14 +33,14 @@ and industrial automation due to its low power
 consumption and ease of use.
 
 * 32 KB of flash memory
-    * non-volatile
-    * Where our program is stored
+  * non-volatile
+  * Where our program is stored
 * 2 KB of SRAM
-    * volatile
-    * Where our variables, stack operations and buffer is stored
+  * volatile
+  * Where our variables, stack operations and buffer is stored
 * 1 KB of EEPROM
-    * non-volatile
-    * Config that we want it to remain
+  * non-volatile
+  * Config that we want it to remain
 * 32 general-purpose I/O pins
 * 8-channel 10-bit ADC
 * 3 timers (one 8-bit, two 16-bit)
@@ -92,12 +92,12 @@ And lastly, The picture below has no jumper in "JP1".
 
 ![jumper_none](figures/jumper_none.jpg)
 
-
 ## SimulIDE
 
 SimulIDE is a simplified IDE for simulating circuits.
 It is a free and open-source software and exteremly good for teaching purposes.
 More advanced IDEs are:
+
 * Proteus
 * Multisim
 * KiCad
@@ -178,7 +178,7 @@ Then the hex file will be created in the ".pio/build/ATmega32" folder.
 `avrdude` is a command-line tool that is used to program the hex file to the microcontroller.
 To install `avrdude` on `Ubuntu` you can simply run the command below:
 
-```bash 
+```bash
 sudo apt install avrdude
 ```
 
@@ -193,6 +193,7 @@ avrdude -c usbasp -p m32 -U flash:w:.pio/build/ATmega32/firmware.hex
 
 To make a simple LED blink code, first we should put an LED on the board.
 To do that we do these steps:
+
 * Put an `led` (`Outputs`/`Leds`/`LED`) on the board.
 * Put a `fixed voltage` on the board.
 * Put a `ground` on the board.
@@ -256,6 +257,3 @@ Now lets connect your board to our computer and upload our hex file using the co
 ```bash
 avrdude -c usbasp -p m32 -U flash:w:.pio/build/ATmega32/firmware.hex
 ```
-
-
-
