@@ -12,7 +12,32 @@
 
 ## 7segment
 
+7segment is a set of 7 leds that can be used to show numbers and some letters.
+Each led is called a segment.
+The segments are named from `a` to `g`.
+Some 7segments have a dot that is called `dp`.
+
+![7segments](figures/7segments.jpg)
+
+To put a 7segment on the board on simul ide, we can go to the `Outputs` -> `Leds` -> `7segment`.
+
 ## Numbers on 7segment
+
+At first let's put a 7segment on the board and connect all of its pins to fixed voltages like below:
+
+![s2_7segment_fixed_voltage](figures/s2_7segment_fixed_voltage.png)
+
+In the image above we have connceted all the pins of the 7segment to the fixed voltages.
+In order for the 7segment to work, we should let `-` pin to have a low value.
+
+Now we can make numbers buy turning on and off the segments.
+For example if we want to make a number `0`, we should turn on all of the segments except `g` and `dp`.
+(make sure that you are in a simulation mode.)
+We are having something like below:
+
+![s2_7segment_0](figures/s2_7segment_0.png)
+
+Now we can make all the numbers.
 
 ## Add ATmega32
 
