@@ -37,7 +37,11 @@ We are having something like below:
 
 ![s2_7segment_0](figures/s2_7segment_0.png)
 
-Now we can make all the numbers.
+Now we can make all the numbers and store them in the format below:
+
+| dp | g | f | e | d | c | b | a |
+|----|---|---|---|---|---|---|---|
+| 0  | 0 | 1 | 1 | 1 | 1 | 1 | 1 |
 
 ## Add ATmega32
 
