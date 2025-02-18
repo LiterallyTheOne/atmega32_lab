@@ -1,4 +1,4 @@
-# Session 2
+# Session 2: 7segment, counter
 
 ## Goal
 
