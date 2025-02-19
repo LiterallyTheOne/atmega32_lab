@@ -18,7 +18,7 @@
 * We use SimulIDE as our simulator.
 * First we run our code on the simulator and then if it's possible we run it on the real microcontroller.
 
-* Students are required to be in group of 2 or 3 people.
+* Students are required to be in groups of 2 or 3 people.
 
 ## Assessment
 
