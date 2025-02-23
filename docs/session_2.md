@@ -100,3 +100,12 @@ For example:
 ```c
 int a = PINA; 
 ```
+
+## Implementation
+
+Now we know how to define a binary and a hex in C.
+We can define the numbers in binary and write a code that shows them on the 7segment.
+
+## Add an LED
+
+If you add an LED to the board and connect it to the ATmega32, you will have a bonus point.
