@@ -45,6 +45,14 @@ Now we can make all the numbers and store them in the format below:
 
 ## Add ATmega32
 
+Now lets add an ATmega32 to the board.
+Then we connect our 7segment to the ATmega32 like the image below:
+
+![s2_Atmega32_7segment](figures/s2_Atmega32_7segment.png)
+
+After doing that we should review and learn some essential concepts,
+Then we are ready to write our code.
+
 ## Binary in C
 
 To define a binay in C, we can use `0b` prefix.
