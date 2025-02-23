@@ -6,7 +6,7 @@
 
 ![s2_7segment_led](figures/s2_7segment_led.gif)
 
-### bounus point
+### bonus point
 
 * Add a led to the board that turns on when the number reaches to `0`.
 
