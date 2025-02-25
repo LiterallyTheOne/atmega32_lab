@@ -109,3 +109,18 @@ We can define the numbers in binary and write a code that shows them on the 7seg
 ## Add an LED
 
 If you add an LED to the board and connect it to the ATmega32, you will have a bonus point.
+
+## Run it on the board
+
+To run our code on the board, we should make some adjusments.
+In the board that we have, 7segment leds will turn on when we put
+`0` on their related pin which is quite opposite of what we have made
+in the simulation.
+In order to fix this issue, the only thing that we should do is to
+put a negative (`~`) before the values that we have calulated.
+For example if we have `0b00111111` for making `0` on 7segment,
+we should change it to `~0b00111111` which is equal to `0b11000000`.
+
+Another thing that we should consider when we are uploading our code
+to the board is that, `JP1` which is related to the 7segments should not
+be on the `on` position.
