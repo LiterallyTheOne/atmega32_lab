@@ -1,5 +1,15 @@
 # Session 3: multiple 7segments
 
+## Goal
+
+![s3_goal](figures/s3_goal.gif)
+![s3_goal_board](figures/s3_goal_board.gif)
+
+## Bonus
+
+![s3_bonus](figures/s3_bonus.gif)
+![s3_bonus_board](figures/s3_bonus_board.gif)
+
 ## Shift
 
 We can shift a number, multiple times like below:
