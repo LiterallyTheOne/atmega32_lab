@@ -133,3 +133,47 @@ void write_number(int number, int index)
 As you can see we wanted an specefic 7segment to turn on regarding to its index.
 To do so we wrote the code `PORTC = 0xFF & ~(1 << (index + 4))`.
 For example, if we put `index` to `1`, `PORTC` will be `0b11011111` and the second 7segment will turn on.
+
+## Replace the approach with the function
+
+So now we can use the function instead of write them manually:
+
+```c
+write_number(8, 0);
+write_number(2, 1);
+```
+
+## Use loop
+
+To let the numbers stay on 7segments we can use a loop.
+For example:
+
+```c
+for (int i = 0; i < 100; i++)
+{
+    write_number(8, 0);
+    write_number(2, 1);
+}
+
+for (int i = 0; i < 100; i++)
+{
+    write_number(5, 0);
+    write_number(3, 1);
+}
+```
+
+At first the number `82` will be shown on the 7segments and after that the number `53` will be shown.
+To calculate how much a number stays on the 7segments we can processes it like this.
+We have `2ms` dealy for each number.
+We write 2 numbers right now so it should be `4ms`.
+We have a loop that runs 100 times so it should be `400ms`.
+So the number `82` will be shown on the 7segments for `400ms` and after that the number `53` will be shown.
+
+## Date
+
+Now we are ready to show the date on our 7segments.
+First we want the current day to be shown.
+After that the month that we are in it.
+And finally the year.
+This process should be repeated.
+Example of the execuation is on the **Goal** section.
