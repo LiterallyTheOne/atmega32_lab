@@ -15,7 +15,7 @@ int numbers[10] = {
 
 void write_number(int number, int index)
 {
-    PORTC = ~(1 << (index + 4));
+    PORTC = 0xFF & ~(1 << (index + 4));
     PORTB = numbers[number];
     delay(2);
 }

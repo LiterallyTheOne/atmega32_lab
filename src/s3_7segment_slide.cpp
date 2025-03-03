@@ -19,7 +19,7 @@ int want_to_show[D1] = {1, 4, 0, 3, -1, 1, 2, -1, 1, 5, -1};
 
 void write_number(int number, int index)
 {
-    PORTC = ~(1 << (index + 4));
+    PORTC = 0xFF & ~(1 << (index + 4));
     if (number >= 0)
     {
         PORTB = numbers[number];
