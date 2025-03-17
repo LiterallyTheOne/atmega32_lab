@@ -193,6 +193,16 @@ ISR(TIMER0_COMP_vect)
 }
 ```
 
+## Change clock frequency on SimulIDE
+
+You can change the clock frequency of ATmega32 on SimulIDE by taking the steps below:
+
+* Right click on ATmega32
+* Select **properties**
+* In the frequency section you can change the frequency
+
+In this session, we want it to have the frequency of `8Mhz`.
+
 ## Replace delay with `Time Interrupt`
 
 Now we know when a `Timer interrupt` happens.
