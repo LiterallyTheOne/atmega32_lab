@@ -2,7 +2,8 @@
 
 ## Goal
 
-![LED Timer Interrupt](figures/s6_led_timer_interrupt.gif)
+![s6_goal_board](figures/s6_goal_board.gif)
+![s6_goal](figures/s6_goal.gif)
 
 * TIMER0: Kight pattern
 * TIMER2: Shift pattern
