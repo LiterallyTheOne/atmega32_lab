@@ -123,6 +123,15 @@ We can use it like the code below:
 cli()
 ```
 
+## Connect Interrupt
+
+To connect an interrupt, we need to add a **switch**.
+Connect one part of the switch to the `PD3` and the other
+part to a **fixed voltage** that is **on**.
+Some thing like below:
+
+![s5_add_interrupt](figures/s5_add_interrupt.png)
+
 ## Write a counter on LEDs and control them with `Interrupt1`
 
 Now we can write a counter on LEDs which is incrementing until
