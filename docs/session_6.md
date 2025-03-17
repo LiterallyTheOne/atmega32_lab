@@ -179,16 +179,17 @@ an interrupt would occur.
 
 We can define a function for timer interrupt, like below:
 
-* TIM0_COMP
+* TIMER0_COMP
   * TIM0: Timer 0
   * COMP: Compare
-* TIM0_OVF
+* TIMER0_OVF
   * TIM0: Timer 0
   * OVF: Overflow
 
-```c
-interrupt [TIM0_COMP] void timer0_comp_isr(void){
-
+```cpp
+ISR(TIMER0_COMP_vect)
+{
+    // your code here
 }
 ```
 
