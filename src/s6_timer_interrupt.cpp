@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
-#define COUNTER_1 250
-#define COUNTER_2 500
+#define COUNTER_1 500
+#define COUNTER_2 100
 
 int ck1 = 0;
 int ck2 = 0;
@@ -58,8 +58,8 @@ ISR(INT1_vect)
 
 ISR(INT0_vect)
 {
-    speed++;
-    if (speed > 3)
+    speed *= 2;
+    if (speed > 7)
     {
         speed = 1;
     }
