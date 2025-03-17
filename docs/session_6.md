@@ -12,7 +12,7 @@
 
 ## Bonus
 
-* TIMER1: does another patern
+* TIMER1: does another pattern
 
 ## Connect LEDs and interrupts
 
