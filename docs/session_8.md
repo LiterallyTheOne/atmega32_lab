@@ -204,6 +204,14 @@ You can change the clock frequency of ATmega32 on SimulIDE by taking the steps b
 
 In this session, we want it to have the frequency of `8Mhz`.
 
+## Change clock frequency on PlatformIO
+
+To change clock frequency on PlatformIO, you should add this like to your `platformio.ini` file:
+
+```ini
+board_build.f_cpu = 8000000L
+```
+
 ## Replace delay with `Time Interrupt`
 
 Now we know when a `Timer interrupt` happens.
