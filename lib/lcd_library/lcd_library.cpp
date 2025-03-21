@@ -85,10 +85,12 @@ void lcd_gotoxy(unsigned char row, unsigned char col)
     else
         pos = 0xC0 + col;
     lcd_command(pos);
+    cursor_pos = col * (row + 1);
 }
 
 void lcd_clear()
 {
     lcd_command(0x01); // Clear display command
     _delay_ms(2);
+    cursor_pos = 0;
 }
