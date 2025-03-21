@@ -220,6 +220,10 @@ if I put `0` in `PORTA.4`:
 * If the key is pressed: `PINA.0` = 0
 * If the key is **not** pressed: `PINA.0` = 1
 
+The simulation would be like below:
+
+![s5_lcd_one_key](figures/s5_lcd_one_key.png)
+
 ### Detect a row of keys (row0)
 
 Now we try to detect a row of keys.
@@ -233,6 +237,10 @@ if I put `0` in `PORTA.4`:
 * If the key in `col1` is pressed: `PINA.1` = 0
 * If the key in `col2` is pressed: `PINA.2` = 0
 * If the key in `col3` is pressed: `PINA.3` = 0
+
+The simulation would be like below:
+
+![s5_lcd_one_row](figures/s5_lcd_one_row.png)
 
 ### Detect all keys
 
