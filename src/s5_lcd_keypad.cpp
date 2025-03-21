@@ -11,7 +11,7 @@ char keys[4][4] = {
     {'N', '0', 'S', 'E'},
 };
 
-int key_pressed()
+char key_pressed()
 {
     for (int i = 0; i < 4; i++)
     {
@@ -22,6 +22,29 @@ int key_pressed()
             {
                 return keys[i][j];
             }
+        }
+    }
+    return 0;
+}
+
+char key_pressed_one()
+{
+    PORTA = ~(1 << PA4);
+    if (!(PINA & (1 << PA0)))
+    {
+        return '1';
+    }
+    return 0;
+}
+
+char key_pressed_one_row()
+{
+    PORTA = ~(1 << PA4);
+    for (int i = 0; i < 4; i++)
+    {
+        if (!(PINA & (1 << i)))
+        {
+            return keys[0][i];
         }
     }
     return 0;
