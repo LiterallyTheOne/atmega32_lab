@@ -8,7 +8,7 @@ It supports AVR and MCS-51 microcontroller,
 In this class we are working on an AVR microcontroller,
 called Atmega32.
 
-![nsk108](figures/nsk108.jpg)
+![nsk108](figures/s1_nsk108.jpg)
 
 In the picture above, you can see the board that we are
 working on this class.
@@ -22,7 +22,7 @@ We are connecting this programmer to our pc via usb
 port.
 Also, we connect the ISP to the board.
 
-![programmer](figures/programmer.jpg)
+![programmer](figures/s1_programmer.jpg)
 
 ## ATmega32
 
@@ -46,7 +46,7 @@ consumption and ease of use.
 * 3 timers (one 8-bit, two 16-bit)
 * UART, SPI, and I2C communication interfaces
 
-![atmega32_pins](figures/atmega32_pins.png)
+![atmega32_pins](figures/s1_atmega32_pins.png)
 
 In the picture above, you can see the pins on
 ATmega32.
@@ -69,7 +69,7 @@ A removable connector that is used to connect to pins
 on the board. There is an example of a jumper in the picture
 below.
 
-![jumper](figures/jumper.jpg)
+![jumper](figures/s1_jumper.jpg)
 
 In this board most of the time there are 3 positions that
 you can put a jumper on:
@@ -81,16 +81,16 @@ you can put a jumper on:
 The picture below shows the position of
 a jumper in "on" position in "JP1".
 
-![jumper_on](figures/jumper_on.jpg)
+![jumper_on](figures/s1_jumper_on.jpg)
 
 Also, The picture below shows the position of
 a jumper in "off" position in "JP1".
 
-![jumper_off](figures/jumper_off.jpg)
+![jumper_off](figures/s1_jumper_off.jpg)
 
 And lastly, The picture below has no jumper in "JP1".
 
-![jumper_none](figures/jumper_none.jpg)
+![jumper_none](figures/s1_jumper_none.jpg)
 
 ## SimulIDE
 
@@ -124,7 +124,7 @@ It will download all the necessary files needed for your project.
 In this course we are using the Atmega32 board.
 So when we are creating a new project, we are selecting ATMega32 as our board, like the picture below.
 
-![platformio](figures/platformio_board_atmega32.png)
+![platformio](figures/s1_platformio_board_atmega32.png)
 
 After our project is created, a folder will be created in the directory that you have selected.
 In this folder, you can see the "src" folder which contains the main.cpp file.
@@ -204,7 +204,7 @@ To do that we do these steps:
 
 So you should have something like this:
 
-![SimulIDE_LED](figures/SimulIDE_LED.png)
+![SimulIDE_LED](figures/s1_SimulIDE_LED.png)
 
 Now we have a working LED on the board.
 Now let's put an `ATMega32` on the board and connect the `led` to the `ATMega32`.
@@ -217,7 +217,7 @@ To do that we do these steps:
 
 So you should have something like this:
 
-![SimulIDE_LED_ATMega32](figures/SimulIDE_LED_ATMega32.png)
+![SimulIDE_LED_ATMega32](figures/s1_SimulIDE_LED_ATMega32.png)
 
 Now let's write the code to make the `LED` blink.
 To do that we do these steps:
@@ -250,7 +250,7 @@ void loop()
 
 So it should be something like this:
 
-![SimulIDE_LED_ATMega32_blink](figures/SimulIDE_LED_ATMega32_blink.gif)
+![SimulIDE_LED_ATMega32_blink](figures/s1_SimulIDE_LED_ATMega32_blink.gif)
 
 Now lets connect your board to our computer and upload our hex file using the code below:
 
