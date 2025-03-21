@@ -17,7 +17,7 @@ Each led is called a segment.
 The segments are named from `a` to `g`.
 Some 7segments have a dot that is called `dp`.
 
-![7segments](figures/7segments.jpg)
+![7segments](figures/s2_7segments.jpg)
 
 To put a 7segment on the board on simul ide, we can go to the `Outputs` -> `Leds` -> `7segment`.
 
