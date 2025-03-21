@@ -32,6 +32,23 @@ It has 16-pins.
 
 ![LCD108 ATmega32](figures/s5_lcd108_atmega32.jpg)
 
+## Connect LCD on SimulIDE
+
+In `SimulIDE` we can select an LCD from `/outputs/displays/HD44780` and connect it to the `ATmega32`.
+We connect the pins like this:
+
+* RS PC3
+* RW PD7
+* EN PD6
+* D4 PB4
+* D5 PB5
+* D6 PB6
+* D7 PB7
+
+So the result would be like the image below:
+
+![s5_lcd_alone](figures/s5_lcd_alone.png)
+
 ### LCD library and header file
 
 For `LCD` library, We have a directory called `lcd_library` which have two files:
