@@ -161,7 +161,7 @@ Example:
 lcd_clear();
 ```
 
-### lcd_commad
+### `lcd_commad`
 
 Sends a command to the `LCD`.
 
