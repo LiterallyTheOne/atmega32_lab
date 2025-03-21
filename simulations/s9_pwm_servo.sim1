@@ -1,0 +1,73 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega32-2" mainComp="false" Show_id="true" Show_Val="false" Pos="-108,-152" rotation="-90" hflip="1" vflip="1" label="mega32-2" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="8 MHz" Program="../../../../Documents/PlatformIO/Projects/s7_pwm/.pio/build/ATmega32/firmware.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
+
+<item itemtype="Servo" CircId="Servo-3" mainComp="false" Show_id="true" Show_Val="false" Pos="40,16" rotation="0" hflip="1" vflip="1" label="Servo-3" idLabPos="-16,-40" labelrot="0" valLabPos="-16,20" valLabRot="0" Speed="0.2 _s/60º" MinPulse="1000 _µs" MaxPulse="2000 _µs" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1000 MΩ" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-4" mainComp="false" Show_id="false" Show_Val="false" Pos="-492,0" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-4" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Ground" CircId="Ground-5" mainComp="false" Show_id="false" Show_Val="false" Pos="-476,44" rotation="0" hflip="1" vflip="1" label="Ground-5" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-7" mainComp="false" Show_id="false" Show_Val="false" Pos="-20,-68" rotation="-180" hflip="1" vflip="1" label="Fixed Voltage-7" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Voltimeter" CircId="Voltimeter-22" mainComp="false" Show_id="false" Show_Val="false" Pos="-268,-384" rotation="0" hflip="1" vflip="1" label="Voltimeter-22" idLabPos="-24,-40" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Hd44780" CircId="Hd44780-25" mainComp="false" Show_id="true" Show_Val="false" Pos="216,-364" rotation="0" hflip="1" vflip="1" label="Hd44780-25" idLabPos="70,-82" labelrot="0" valLabPos="-16,20" valLabRot="0" Rows="2" Cols="16" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-33" mainComp="false" Show_id="false" Show_Val="false" Pos="-424,-252" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-33" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Potentiometer" CircId="Potentiometer-36" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-336,-288" rotation="0" hflip="1" vflip="1" label="Potentiometer-36" idLabPos="-16,-40" labelrot="0" valLabPos="15,-20" valLabRot="0" Resistance="1 kΩ" Value_Ohm="0 Ω" Slider="false" Scale="1" />
+
+<item itemtype="Ground" CircId="Ground-37" mainComp="false" Show_id="false" Show_Val="false" Pos="-348,-164" rotation="0" hflip="1" vflip="1" label="Ground-37" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-41" mainComp="false" Show_id="false" Show_Val="false" Pos="-96,-360" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-41" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Node" CircId="Node-38" mainComp="false" Pos="-304,-196" />
+
+<item itemtype="Node" CircId="Node-39" mainComp="false" Pos="-276,-244" />
+
+<item itemtype="Node" CircId="Node-42" mainComp="false" Pos="-36,-360" />
+
+<item itemtype="Connector" uid="Connector-5" startpinid="Fixed Voltage-7-outnod" endpinid="mega32-2-RST" pointList="-36,-68,-36,-144" />
+
+<item itemtype="Connector" uid="Connector-6" startpinid="Servo-3-in2" endpinid="mega32-2-PORTD5" pointList="-8,32,-164,32,-164,108,-236,108,-236,-52,44,-52,44,-144" />
+
+<item itemtype="Connector" uid="Connector-43" startpinid="Hd44780-25-dataPin4" endpinid="mega32-2-PORTB4" pointList="288,-356,288,-96,-68,-96,-68,-144" />
+
+<item itemtype="Connector" uid="Connector-44" startpinid="Hd44780-25-dataPin5" endpinid="mega32-2-PORTB5" pointList="296,-356,296,-104,-60,-104,-60,-144" />
+
+<item itemtype="Connector" uid="Connector-45" startpinid="Hd44780-25-dataPin6" endpinid="mega32-2-PORTB6" pointList="304,-356,304,-108,-52,-108,-52,-144" />
+
+<item itemtype="Connector" uid="Connector-46" startpinid="Hd44780-25-dataPin7" endpinid="mega32-2-PORTB7" pointList="312,-356,312,-112,-44,-112,-44,-144" />
+
+<item itemtype="Connector" uid="Connector-47" startpinid="Hd44780-25-PinRS" endpinid="mega32-2-PORTC3" pointList="232,-356,232,-228,20,-228,20,-208" />
+
+<item itemtype="Connector" uid="Connector-50" startpinid="Hd44780-25-PinRW" endpinid="mega32-2-PORTD7" pointList="240,-356,240,-216,52,-216,52,-208" />
+
+<item itemtype="Connector" uid="Connector-51" startpinid="Hd44780-25-PinEn" endpinid="mega32-2-PORTD6" pointList="248,-356,248,-132,52,-132,52,-144" />
+
+<item itemtype="Connector" uid="Connector-75" startpinid="Fixed Voltage-4-outnod" endpinid="Servo-3-in0" pointList="-476,0,-8,0" />
+
+<item itemtype="Connector" uid="Connector-84" startpinid="Fixed Voltage-33-outnod" endpinid="Potentiometer-36-PinA" pointList="-408,-252,-376,-252,-376,-288,-352,-288" />
+
+<item itemtype="Connector" uid="Connector-87" startpinid="Servo-3-in1" endpinid="Ground-5-Gnd" pointList="-8,16,-476,16,-476,28" />
+
+<item itemtype="Connector" uid="Connector-88" startpinid="Voltimeter-22-rPin" endpinid="Node-38-1" pointList="-260,-368,-260,-196,-304,-196" />
+
+<item itemtype="Connector" uid="Connector-89" startpinid="Potentiometer-36-PinB" endpinid="Node-38-0" pointList="-320,-288,-304,-288,-304,-196" />
+
+<item itemtype="Connector" uid="Connector-90" startpinid="Node-38-2" endpinid="Ground-37-Gnd" pointList="-304,-196,-348,-196,-348,-180" />
+
+<item itemtype="Connector" uid="Connector-91" startpinid="Voltimeter-22-lPin" endpinid="Node-39-1" pointList="-276,-368,-276,-244" />
+
+<item itemtype="Connector" uid="Connector-92" startpinid="Potentiometer-36-PinM" endpinid="Node-39-0" pointList="-336,-272,-336,-244,-276,-244" />
+
+<item itemtype="Connector" uid="Connector-93" startpinid="Node-39-2" endpinid="mega32-2-PORTA0" pointList="-276,-244,-100,-244,-100,-208" />
+
+<item itemtype="Connector" uid="Connector-95" startpinid="mega32-2-PORTV1" endpinid="Node-42-1" pointList="-36,-208,-36,-360" />
+
+<item itemtype="Connector" uid="Connector-96" startpinid="Fixed Voltage-41-outnod" endpinid="Node-42-0" pointList="-80,-360,-36,-360" />
+
+<item itemtype="Connector" uid="Connector-97" startpinid="Node-42-2" endpinid="mega32-2-PORTV0" pointList="-36,-360,-20,-360,-20,-208" />
+
+</circuit>
