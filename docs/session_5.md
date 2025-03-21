@@ -6,7 +6,7 @@
 
 ### Bonus point
 
-Think about it.
+TODO: Think about it.
 
 ## LCD
 
