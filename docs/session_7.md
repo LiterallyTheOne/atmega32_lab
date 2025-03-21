@@ -2,15 +2,15 @@
 
 ## Goal
 
-![s5_goal](figures/s5_goal.gif)
+![s7_goal](figures/s7_goal.gif)
 
-![s5_goal_board](figures/s5_goal_board.gif)
+![s7_goal_board](figures/s7_goal_board.gif)
 
 ### Bonus
 
-![s5_bonus](figures/s5_bonus.gif)
+![s7_bonus](figures/s7_bonus.gif)
 
-![s5_bonus_board](figures/s5_bonus_board.gif)
+![s7_bonus_board](figures/s7_bonus_board.gif)
 
 * Patern above
 * Interrupt0: stop whenever it's pressed
@@ -20,7 +20,7 @@
 Let's first connect 8 LEDs to the `PORTB` of an ATmega32.
 We can do that like below:
 
-![s5_connecting_leds](figures/s5_connecting_leds.png)
+![s7_connecting_leds](figures/s7_connecting_leds.png)
 
 ## Interrupt
 
@@ -130,7 +130,7 @@ Connect one part of the switch to the `PD3` and the other
 part to a **fixed voltage** that is **on**.
 Some thing like below:
 
-![s5_add_interrupt](figures/s5_add_interrupt.png)
+![s7_add_interrupt](figures/s7_add_interrupt.png)
 
 ## Write a counter on LEDs and control them with `Interrupt1`
 
