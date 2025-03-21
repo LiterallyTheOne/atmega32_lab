@@ -65,12 +65,12 @@ the counter exceeds 255.
 You can see in the image below that every time
 we reach 256, an `interrupt` would be sent.
 
-![Timer Overflow](figures/timer_overflow.png)
+![Timer Overflow](figures/s8_timer_overflow.png)
 
 If we put it on `compare` mode, and set `OCR` to 100,
 we would have an image like below:
 
-![Timer Compare](figures/timer_compare.png)
+![Timer Compare](figures/s8_timer_compare.png)
 
 As you can see the image above, still there would be an interrupt
 every 256 clock.
@@ -78,7 +78,7 @@ We can set a register to prevent that from happening.
 If we reach to `OCR` then `TCNT` becomes `0` again.
 It would like the image below.
 
-![Timer Compare OCR](figures/timer_compare_ocr.png)
+![Timer Compare OCR](figures/s8_timer_compare_ocr.png)
 
 By knowing that we can calulate how many times an interrupt
 would be sent.
