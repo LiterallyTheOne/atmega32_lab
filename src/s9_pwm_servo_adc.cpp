@@ -45,7 +45,7 @@ void pwm_init()
     TCCR1A = (1 << COM1A1) | (1 << WGM11);
     TCCR1B = (1 << WGM13) | (1 << WGM12) | (1 << CS11); // Prescaler = 8
 
-    ICR1 = 2'000;
+    ICR1 = 20'000;
 }
 
 void setup()
@@ -65,7 +65,7 @@ void loop()
 
     OCR1A = z;
 
-    sprintf(toshow, "Pot: %lu", z);
+    sprintf(toshow, "%lu", z);
 
     lcd_gotoxy(0, 0);
     lcd_clear();
