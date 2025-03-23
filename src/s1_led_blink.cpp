@@ -1,11 +1,13 @@
 #include <Arduino.h>
 
-void setup() {
+void setup()
+{
     DDRB = 0xFF;
     PORTB = 0x01;
 }
 
-void loop() {
+void loop()
+{
     PORTB = 0x00;
     delay(500);
     PORTB = 0x01;
