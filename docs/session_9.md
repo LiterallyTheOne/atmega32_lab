@@ -10,7 +10,7 @@ TODO: fill
 
 ## Servo Motor
 
-TODO: add an image of a servo motor
+![s9_servo](figures/s9_servo.jpg)
 
 Servo motor is a type of electeric motor that is designed for precise control.
 It is widely used in robotics.
