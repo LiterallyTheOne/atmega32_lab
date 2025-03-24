@@ -1,0 +1,47 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega32-2" mainComp="false" Show_id="true" Show_Val="false" Pos="-208,-156" rotation="-90" hflip="1" vflip="1" label="mega32-2" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="Users/ramin/Documents/PlatformIO/Projects/s9_pwm_led/.pio/build/ATmega32/firmware.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
+
+<item itemtype="Led" CircId="Led-3" mainComp="false" Show_id="false" Show_Val="false" Pos="60,-72" rotation="0" hflip="1" vflip="1" label="Led-3" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="WS2812" CircId="WS2812-4" mainComp="false" Show_id="false" Show_Val="false" Pos="60,-16" rotation="0" hflip="1" vflip="1" label="WS2812-4" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Rows="1" Cols="1" RstTime="50 _µs" T0H="400 _ns" T0L="850 _ns" T1H="850 _ns" T1H="400 _ns" />
+
+<item itemtype="Ground" CircId="Ground-5" mainComp="false" Show_id="false" Show_Val="false" Pos="192,32" rotation="0" hflip="1" vflip="1" label="Ground-5" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-7" mainComp="false" Show_id="false" Show_Val="false" Pos="-136,-128" rotation="-90" hflip="1" vflip="1" label="Fixed Voltage-7" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Oscope" CircId="Oscope-8" mainComp="false" Show_id="false" Show_Val="false" Pos="192,-296" rotation="0" hflip="1" vflip="1" label="Oscope-8" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="135 _px" Basic_Y="135 _px" BufferSize="600000" connectGnd="true" InputImped="10 MΩ" TimDiv="1000000000" TimPos="0,0,0,0," VolDiv="1,1,1,1," Tunnels=",,,," Trigger="4" Filter="0.1 V" AutoSC="4" Tracks="1" HideCh="false,false,false,false," VolPos="0,0,0,0," />
+
+<item itemtype="Voltimeter" CircId="Voltimeter-12" mainComp="false" Show_id="false" Show_Val="false" Pos="-128,8" rotation="0" hflip="1" vflip="1" label="Voltimeter-12" idLabPos="-24,-40" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Node" CircId="Node-10" mainComp="false" Pos="104,-72" />
+
+<item itemtype="Node" CircId="Node-11" mainComp="false" Pos="4,-72" />
+
+<item itemtype="Node" CircId="Node-15" mainComp="false" Pos="-12,-72" />
+
+<item itemtype="Node" CircId="Node-16" mainComp="false" Pos="192,-20" />
+
+<item itemtype="Connector" uid="Connector-3" startpinid="Fixed Voltage-7-outnod" endpinid="mega32-2-RST" pointList="-136,-144,-136,-148" />
+
+<item itemtype="Connector" uid="Connector-7" startpinid="Oscope-8-PinG" endpinid="Node-10-1" pointList="104,-232,104,-72" />
+
+<item itemtype="Connector" uid="Connector-8" startpinid="Led-3-rPin" endpinid="Node-10-0" pointList="76,-72,104,-72" />
+
+<item itemtype="Connector" uid="Connector-10" startpinid="Oscope-8-Pin0" endpinid="Node-11-1" pointList="104,-344,4,-344,4,-72" />
+
+<item itemtype="Connector" uid="Connector-12" startpinid="Node-11-2" endpinid="Led-3-lPin" pointList="4,-72,44,-72" />
+
+<item itemtype="Connector" uid="Connector-21" startpinid="Voltimeter-12-lPin" endpinid="Node-15-1" pointList="-136,24,-136,60,-12,60,-12,-72" />
+
+<item itemtype="Connector" uid="Connector-22" startpinid="mega32-2-PORTD5" endpinid="Node-15-0" pointList="-56,-148,-56,-72,-12,-72" />
+
+<item itemtype="Connector" uid="Connector-23" startpinid="Node-15-2" endpinid="Node-11-0" pointList="-12,-72,4,-72" />
+
+<item itemtype="Connector" uid="Connector-24" startpinid="Voltimeter-12-rPin" endpinid="Node-16-1" pointList="-120,24,172,24,172,-20,192,-20" />
+
+<item itemtype="Connector" uid="Connector-25" startpinid="Node-10-2" endpinid="Node-16-0" pointList="104,-72,192,-72,192,-20" />
+
+<item itemtype="Connector" uid="Connector-26" startpinid="Node-16-2" endpinid="Ground-5-Gnd" pointList="192,-20,192,16" />
+
+</circuit>
