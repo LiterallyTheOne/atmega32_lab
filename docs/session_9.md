@@ -45,6 +45,19 @@ We have three timers on Atmega32:
 * Timer1: 16bit
 * Timer2: 8bit
 
+We can create `PWM` with all three timers.
+As you can see on the picture below, each corresponding pin for each timer is shown.
+
+![s9_atmega32_oc_pins](figures/s9_atmega32_oc_pins.jpg)
+
+* `Timer0`:
+  * `OC0` -> `PB3`
+* `Timer1`:
+  * `OC1A` -> `PD4`
+  * `OC1B` -> `PD5`
+* `Timer2`:
+  * `OC2` -> `PD7`
+
 In `Timer0` and `Timer2` for generating the desired frequency we only can use a `prescaler` which
 could only take values of: [1, 8, 64, 256, 1024].
 As you can see this numbers are limiting.
