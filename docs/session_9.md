@@ -54,7 +54,7 @@ So to generate the desired frequency for our servo motor we will be using `Timer
 
 ## Timer1
 
-### Connect servo motor to ATmega32 in SimulIDE
+## Connect servo motor to ATmega32 in SimulIDE
 
 To add a servo motor in SimulIDE, we should go to
 `Outputs/Motors/Servo Motor`.
