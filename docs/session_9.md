@@ -2,7 +2,7 @@
 
 ## Goal
 
-TODO: fill
+![s9_goal](figures/s9_goal.gif)
 
 ### Bonus
 
