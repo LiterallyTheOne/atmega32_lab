@@ -242,3 +242,120 @@ void pwm_init()
 
 Then we can control our servo motor using `OCR1A`.
 So `OCR1A=1000` would be -90 and `OCR1A=2000` would be 90.
+
+## ADC
+
+`ADC` (Analog to Digital Converter) converts an analog signal to a digital signal.
+We used to have only `1` or `0` in the digital world.
+For example if our highest voltage was `5V`, we could only have `5V` or `0V`.
+But with `ADC` we can have a range of values between `5V` and `0V`.
+In ATmega32 the resolution of the `ADC` is `10bit`.
+So we can have `1024` different values between `5V` and `0V`.
+The formula to calculate the value of the analog signal is:
+
+$$
+V_{digital} = \frac{V_{analog} \times 1023}{V_{ref}}
+$$
+
+If our reference voltage would be `5V` and we want to calculate
+digital voltage when our analog voltage is `5V`, we have:
+
+$$
+V_{digital} = \frac{5 \times 1023}{5} = 1023
+$$
+
+And for `0V` we have:
+
+$$
+V_{digital} = \frac{0 \times 1023}{5} = 0
+$$
+
+We have some registers that we should set in order to get the desired value from the `ADC`.
+
+### `ADMUX`
+
+ADC Multiplexer Selection Register (`ADMUX`) is used to select the channel of the ADC.
+
+| ADMUX         | 7     | 6     | 5     | 4    | 3    | 2    | 1    | 0    |
+| ------------- | ----- | ----- | ----- | ---- | ---- | ---- | ---- | ---- |
+| name          | REFS1 | REFS0 | ADLAR | MUX4 | MUX3 | MUX2 | MUX1 | MUX0 |
+| Read/Write    | R/W   | R/W   | R/W   | R/W  | R/W  | R/W  | R/W  | R/W  |
+| initial value | 0     | 0     | 0     | 0    | 0    | 0    | 0    | 0    |
+
+| REFS1 | REFS0 | Description                                                          |
+| ----- | ----- | -------------------------------------------------------------------- |
+| 0     | 0     | AREF, Internal Vref turned off                                       |
+| 0     | 1     | AVCC with external capacitor at AREF pin                             |
+| 1     | 0     | Reserved                                                             |
+| 1     | 1     | Internal 2.56V Voltage Reference with external capacitor at AREF pin |
+
+We should set the reference voltage to `AVCC` using the code below:
+
+```cpp
+ADMUX |= (1 << REFS0);
+```
+
+* ADLAR: ADC Left Adjust Result
+
+| MUX4 | MUX3 | MUX2 | MUX1 | MUX0 | Single Ended Input |
+| ---- | ---- | ---- | ---- | ---- | ------------------ |
+| 0    | 0    | 0    | 0    | 0    | ADC0               |
+| 0    | 0    | 0    | 0    | 1    | ADC1               |
+| 0    | 0    | 0    | 1    | 0    | ADC2               |
+| 0    | 0    | 0    | 1    | 1    | ADC3               |
+| 0    | 0    | 1    | 0    | 0    | ADC4               |
+| 0    | 0    | 1    | 0    | 1    | ADC5               |
+| 0    | 0    | 1    | 1    | 0    | ADC6               |
+| 0    | 0    | 1    | 1    | 1    | ADC7               |
+
+By setting the `MUX` bits we can select the channel of the ADC.
+For example if we want to select `ADC1` we should set the `MUX` bits to `00000` using the code below:
+
+```cpp
+ADMUX &= 0xF0;
+ADMUX |= 1;
+```
+
+### `ADCSRA`
+
+ADC Control and Status Register A (`ADCSRA`) is used to control the ADC.
+
+| ADCSRA        | 7    | 6    | 5     | 4    | 3    | 2     | 1     | 0     |
+| ------------- | ---- | ---- | ----- | ---- | ---- | ----- | ----- | ----- |
+| name          | ADEN | ADSC | ADATE | ADIF | ADIE | ADPS2 | ADPS1 | ADPS0 |
+| Read/Write    | R/W  | R/W  | R/W   | R/W  | R/W  | R/W   | R/W   | R/W   |
+| initial value | 0    | 0    | 0     | 0    | 0    | 0     | 0     | 0     |
+
+* `ADEN`: ADC Enable
+* `ADSC`: ADC Start Conversion
+* `ADATE`: ADC Auto Trigger Enable
+* `ADIF`: ADC Interrupt Flag
+* `ADIE`: ADC Interrupt Enable
+
+| ADPS2 | ADPS1 | ADPS0 | Division Factor |
+| ----- | ----- | ----- | --------------- |
+| 0     | 0     | 0     | 2               |
+| 0     | 0     | 1     | 2               |
+| 0     | 1     | 0     | 4               |
+| 0     | 1     | 1     | 8               |
+| 1     | 0     | 0     | 16              |
+| 1     | 0     | 1     | 32              |
+| 1     | 1     | 0     | 64              |
+| 1     | 1     | 1     | 128             |
+
+To enable the ADC we should set the `ADEN` bit to `1` using the code below:
+
+```cpp
+ADCSRA |= (1 << ADEN);
+```
+
+Then we set the prescaler to `128` using the code below:
+
+```cpp
+ADCSRA |= (1 << ADPS0) | (1 << ADPS1) | (1 << ADPS2);
+```
+
+### `ADC`
+
+This variable is `10bit` and is used to store the value of the ADC.
+It contains of two registers `ADCL` and `ADCH`.
