@@ -69,7 +69,31 @@ So to generate the desired frequency for our servo motor we will be using `Timer
 
 As we discussed in the previous session, we have three timers in Atmega32.
 The only timer that is `16bit` is Timer1.
-To put `Timer1` in `PWM` mode, we have some registers that we are going to talk about them.
+We have some essential registers that we should use them to control the timer.
+Also to put `Timer1` in `PWM` mode, we need these registers that we are going to talk about them.
+
+### `TCNT1A`, `TCNT1B`
+
+These registers are used to store the current value of the timer.
+
+### `OCR1A`, `OCR1B`
+
+These registers are used to compare the value of the timer with them.
+We can use these registers in different modes, specially in `PWM` mode to control the `duty cycle`.
+
+### `ICR1`
+
+This register is used to control the frequency of the timer.
+In `Fast PWM` mode, we have this formula:
+
+$$
+f_{PWM} = \frac{f_{clk}}{N \times (1 + ICR1)}
+$$
+
+* \(f_{PWM}\): desired frequency
+* \(f_{clk}\): clock frequency
+* \(N\): prescaler
+* \(ICR1\): value of `ICR1` register
 
 ### `TCCR1A` and `TCCR1B`
 
