@@ -383,3 +383,47 @@ Now we need to connect our reference voltage on ATmega32.
 So you are going to have something like this:
 
 ![s9_servo_pwm_adc](figures/s9_servo_pwm_adc.png)
+
+## Write our code for ADC
+
+To initialize the ADC we can write the following function:
+
+```cpp
+void adc_init()
+{
+    // Set reference voltage to AVCC
+    ADMUX |= (1 << REFS0);
+
+    // Enable ADC
+    ADCSRA |= (1 << ADEN);
+
+    // Set prescaler to 128
+    ADCSRA |= (1 << ADPS0) | (1 << ADPS1) | (1 << ADPS2);
+}
+```
+
+To read the value of the ADC we can write the following function:
+
+```cpp
+uint16_t adc_read(uint8_t channel)
+{
+    // Set the channel
+    ADMUX &= 0xF0;
+    ADMUX |= channel;
+
+    // Start the conversion
+    ADCSRA |= (1 << ADSC);
+
+    // Wait for the conversion to finish
+    while (ADCSRA & (1 << ADSC))
+        ;
+
+    // Retrun the value
+    return ADC;
+}
+```
+
+Now we can use the `adc_read` function to read the value of the ADC
+(which is between `0` and `1023`).
+Then cast it to `1000` to `2000` and put it in the `OCR1A` to control the servo motor.
+(we can use map function to do this.)
