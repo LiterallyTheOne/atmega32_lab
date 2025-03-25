@@ -17,6 +17,7 @@ It is widely used in robotics.
 We can control the position of the servo motor by sending a PWM signal to it.
 In this session, we will be using a simple DC servo motor wich only take
 angles in range of [-90, 90].
+-90 when we send `1000us` pulse, and 90 when we send `2000us` pulse.
 The desired `PWM` frequency for this servo motor is `50Hz`.
 This servo motor has three pins: VCC, GND, and signal.
 We are connecting those pins like this:
@@ -175,6 +176,7 @@ TCCR1B |= (1 << CS11);
 We do the following steps to setup our simulation for `pwm`.
 
 * Put an ATmega32 on the board.(make sure to connect its reset to a fixed volatage.)
+* set the clock frequency to 8MHz (in properties).
 * Then put a servo motor from **Outputs/Motors/Servo Motor** on the board.
 * Connect the `V+` pin of the servo motor a 5V (fixed voltage).
 * Connect the `GND` pin of the servo motor to the ground.
@@ -190,3 +192,53 @@ But to make sure that we are making the right frequency and to see the pulses we
 So you are going to have something like this:
 
 ![s9_servo_oscope](figures/s9_servo_oscope.png)
+
+## Write our code
+
+So at first let's calculate the value of `ICR1` to get the desired frequency.
+We know our clock frequency is `8MHz` and the desired frequency is `50Hz`.
+(Make sure to put `board_build.f_cpu = 8'000'000L` in the `platformio.ini` file.)
+Also we put the prescaler to `8`.
+So we have:
+
+$$
+f_{PWM} = \frac{f_{clk}}{N \times (1 + ICR1)}
+\\
+\Rightarrow 50 = \frac{8 \times 10^6}{8 \times (1 + ICR1)}
+\\
+\Rightarrow 50 = \frac{10^6}{1 + ICR1}
+\\
+\Rightarrow 1 + ICR1 = 20,000
+\\
+\Rightarrow ICR1 = 19,999
+$$
+
+Now we can write a function to intitiate our pwm.
+
+```cpp
+void pwm_init()
+{
+  // Set PD5 as output
+  DDRD |= (1 << PD5);
+
+  // Make sure that there is no setup other than the one we are going to put
+  TCCR1A = 0;
+  TCCR1B = 0;
+
+  // non-inverting mode
+  TCCR1A |= (1 << COM1A1);
+
+  // Fast PWM mode
+  TCCR1A |= (1 << WGM11);
+  TCCR1B |= (1 << WGM12) | (1 << WGM13);
+
+  // Set prescaler to 8
+  TCCR1B |= (1 << CS11);
+
+  // Set the frequency to 50Hz
+  ICR1 = 19'999;
+}
+```
+
+Then we can control our servo motor using `OCR1A`.
+So `OCR1A=1000` would be -90 and `OCR1A=2000` would be 90.
