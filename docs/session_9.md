@@ -129,6 +129,23 @@ TCCR1A |= (1 << WGM11);
 TCCR1B |= (1 << WGM12) | (1 << WGM13);
 ```
 
+| CS12 | CS11 | CS10 | Description                                             |
+| ---- | ---- | ---- | ------------------------------------------------------- |
+| 0    | 0    | 0    | No clock source (Timer/Counter stopped).                |
+| 0    | 0    | 1    | clkI/1 (No prescaling)                                  |
+| 0    | 1    | 0    | clkI/8 (From pre-scaler)                                |
+| 0    | 1    | 1    | clkI/64 (From pre-scaler)                               |
+| 1    | 0    | 0    | clkI/256 (From pre-scaler)                              |
+| 1    | 0    | 1    | clkI/1024 (From pre-scaler)                             |
+| 1    | 1    | 0    | External clock source on T1 pin. Clock on falling edge. |
+| 1    | 1    | 1    | External clock source on T1 pin. Clock on rising edge.  |
+
+To make our calculation easier, we put our prescaler to 8 using the code below:
+
+```cpp
+TCCR1B |= (1 << CS11);
+```
+
 ## Connect servo motor to ATmega32 in SimulIDE
 
 To add a servo motor in SimulIDE, we should go to
