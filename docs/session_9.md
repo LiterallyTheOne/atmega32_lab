@@ -170,8 +170,23 @@ To make our calculation easier, we put our prescaler to 8 using the code below:
 TCCR1B |= (1 << CS11);
 ```
 
-## Connect servo motor to ATmega32 in SimulIDE
+## Setup our simulation
 
-To add a servo motor in SimulIDE, we should go to
-`Outputs/Motors/Servo Motor`.
-Then we
+We do the following steps to setup our simulation for `pwm`.
+
+* Put an ATmega32 on the board.(make sure to connect its reset to a fixed volatage.)
+* Then put a servo motor from **Outputs/Motors/Servo Motor** on the board.
+* Connect the `V+` pin of the servo motor a 5V (fixed voltage).
+* Connect the `GND` pin of the servo motor to the ground.
+* Connect the `Signal` pin of the servo motor to the `PD5` of the ATmega32.
+
+Now our setup ready to write our code.
+But to make sure that we are making the right frequency and to see the pulses we also add an oscilloscope to our setup.
+
+* Put an oscope from **Meters/Oscope** on the board.
+* Connect the `CH1` of the oscope to the `PD5` of the ATmega32.
+* Connect the `GND` of the oscope to the ground.
+
+So you are going to have something like this:
+
+![s9_servo_oscope](figures/s9_servo_oscope.png)
