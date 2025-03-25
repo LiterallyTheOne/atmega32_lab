@@ -65,7 +65,42 @@ But for `Timer1` in addition to a `prescaler`, we have another variable called `
 be used to control the desired freqeuency which we are going to explain more about it later.
 So to generate the desired frequency for our servo motor we will be using `Timer1`.
 
-## Timer1
+## `Timer1`
+
+As we discussed in the previous session, we have three timers in Atmega32.
+The only timer that is `16bit` is Timer1.
+To put `Timer1` in `PWM` mode, we have some registers that we are going to talk about them.
+
+### `TCCR1A` and `TCCR1B`
+
+Timer/Counter Register Description (TCCR) is a way that we control our timer setup.
+For `Timer1` we have two registers `TCCR1A` and `TCCR1B`.
+
+| TCCR1A        | 7      | 6      | 5      | 4      | 3     | 2     | 1     | 0     |
+| ------------- | ------ | ------ | ------ | ------ | ----- | ----- | ----- | ----- |
+| name          | COM1A1 | COM1A0 | COM1B1 | COM1B0 | FOC1A | FOC1B | WGM11 | WGM10 |
+| Read/Write    | R/W    | R/W    | R/W    | R/W    | R/W   | R/W   | R/W   | R/W   |
+| initial value | 0      | 0      | 0      | 0      | 0     | 0     | 0     | 0     |
+
+| TCCR1B        | 7     | 6     | 5   | 4     | 3     | 2    | 1    | 0    |
+| ------------- | ----- | ----- | --- | ----- | ----- | ---- | ---- | ---- |
+| name          | ICNC1 | ICEC1 | -   | WGM13 | WGM12 | CS12 | CS11 | CS10 |
+| Read/Write    | R/W   | R/W   | R/W | R/W   | R/W   | R/W  | R/W  | R/W  |
+| initial value | 0     | 0     | 0   | 0     | 0     | 0    | 0    | 0    |
+
+| COM1A1/COM1B1 | COM1A0/COM1B0 | Description (in fast PWM mode)                                                                                                                                        |
+| ------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0             | 0             | Normal port operation, OC1A/OC1B disconnected.                                                                                                                        |
+| 0             | 1             | WGM13:0 = 15: Toggle OC1A on Compare Match, OC1B disconnected (normal port operation). For all other WGM13:0 settings, normal port operation, OC1A/OC1B disconnected. |
+| 1             | 0             | Clear OC1A/OC1B on compare match, set OC1A/OC1B at BOTTOM, (non-inverting mode)                                                                                       |
+| 1             | 1             | Set OC1A/OC1B on compare match, clear OC1A/OC1B at BOTTOM, (inverting mode)                                                                                           |
+
+Because we need to clear `OC1A` which is connected to `PD6` get cleared every time
+it reaches the value of `OCR1A`, we put it in the `non-inverting mode`.
+
+```cpp
+TCCR1A |= (1 << COM1A1)
+```
 
 ## Connect servo motor to ATmega32 in SimulIDE
 
