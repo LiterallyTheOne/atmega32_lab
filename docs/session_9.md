@@ -359,3 +359,27 @@ ADCSRA |= (1 << ADPS0) | (1 << ADPS1) | (1 << ADPS2);
 
 This variable is `10bit` and is used to store the value of the ADC.
 It contains of two registers `ADCL` and `ADCH`.
+
+## Connect a potentiometer
+
+In order to create different voltages we can use a potentioemeter.
+
+* Put a potentiometer from **Passive/Resistors/Potentiometer** on the board.
+* Connect the `V+` of the potentiometer to the `5V` (fixed voltage).
+* Connect the `GND` of the potentiometer to the ground.
+* Connect the `Signal` of the potentiometer to the `ADC0` of the ATmega32.
+
+To see what voltage we are making we can add a voltmeter to our setup.
+
+* Put a voltmeter from **Meters/Voltmeter** on the board.
+* Connect the red pin of the voltmeter to the fixed voltage connected to the potentiometer.
+* Connect the back pin right beside the red pin to the `ADC0` of the ATmega32.
+
+Now we need to connect our reference voltage on ATmega32.
+
+* Connect the `AREF` of the ATmega32 to the `5V` (fixed voltage).
+* Connect the `AVcc` of the ATmega32 to the `5V` (fixed voltage).
+
+So you are going to have something like this:
+
+![s9_servo_pwm_adc](figures/s9_servo_pwm_adc.png)
