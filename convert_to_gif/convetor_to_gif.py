@@ -6,12 +6,12 @@ from moviepy.editor import VideoFileClip
 def convert_to_gif(input_path, output_path):
     """Convert a video to a GIF file."""
     clip = VideoFileClip(input_path)
-    clip.write_gif(output_path)
+    clip.write_gif(output_path, fps=5)
 
 
 def main():
     """main function"""
-    input_path = "haha.webm"
+    input_path = "input.mov"
     output_path = "output_video.gif"
     convert_to_gif(input_path, output_path)
 
