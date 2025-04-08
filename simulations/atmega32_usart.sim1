@@ -1,0 +1,15 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-140,-156" rotation="-90" hflip="1" vflip="1" label="mega32-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="8 MHz" Program="Users/ramin/Documents/PlatformIO/Projects/atmega32_USART/.pio/build/ATmega32/firmware.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-2" mainComp="false" Show_id="false" Show_Val="false" Pos="-68,-124" rotation="-90" hflip="1" vflip="1" label="Fixed Voltage-2" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="SerialTerm" CircId="SerialTerm-17" mainComp="false" Show_id="false" Show_Val="false" Pos="144,-88" rotation="0" hflip="1" vflip="1" label="SerialTerm-17" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Baudrate="9600 _Bd" DataBits="8 _bits" StopBits="1 _bits" SerialMon="false" />
+
+<item itemtype="Connector" uid="Connector-1" startpinid="Fixed Voltage-2-outnod" endpinid="mega32-1-RST" pointList="-68,-140,-68,-148" />
+
+<item itemtype="Connector" uid="Connector-2" startpinid="SerialTerm-17-pin0" endpinid="mega32-1-PORTD0" pointList="120,-96,-28,-96,-28,-148" />
+
+<item itemtype="Connector" uid="Connector-3" startpinid="SerialTerm-17-pin1" endpinid="mega32-1-PORTD1" pointList="120,-80,-20,-80,-20,-148" />
+
+</circuit>
