@@ -6,7 +6,10 @@
 
 ### Bonus point
 
-TODO: Think about it.
+* enter password
+* type `*` instead of actual character
+* `D`: clear the input
+* `E`: submit your password
 
 ## LCD
 
