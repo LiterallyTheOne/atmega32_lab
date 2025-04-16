@@ -56,8 +56,8 @@ So the result would be like the image below:
 
 For `LCD` library, We have a directory called `lcd_library` which have two files:
 
-* [`lcd_library.h`](lib/lcd_library/lcd_library.h)
-* [`lcd_library.cpp`](lib/lcd_library/lcd_library.cpp)
+* [`lcd_library.h`](../lib/lcd_library/lcd_library.h)
+* [`lcd_library.cpp`](../lib/lcd_library/lcd_library.cpp)
 
 To use them in our project we shoud copy the whole directory of `lcd_library`
 to the lib directory of our PlatformIO project.
