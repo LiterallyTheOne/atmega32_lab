@@ -5,6 +5,8 @@ title: Atmega32_lab
 author: Ramin Zarebidoky
 logo: logo.png
 
+copyright: "2025"
+
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
