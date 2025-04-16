@@ -2,8 +2,8 @@
 
 ## Goal
 
-![s7_goal_board](figures/s7_goal_board.gif)
-![s7_goal](figures/s7_goal.gif)
+![s8_goal_board](figures/s8_goal_board.gif)
+![s8_goal](figures/s8_goal.gif)
 
 * TIMER0: Kight pattern
 * TIMER2: Shift pattern
@@ -20,7 +20,7 @@ Like session_5 we should connect 8 LEDs to `PB`.
 We connect two interrupts to `PD2` and `PD3`.
 So the result would be something like below:
 
-![s7_led_interrupt](figures/s7_led_interrupt.png)
+![s8_led_interrupt](figures/s8_led_interrupt.png)
 
 ## Progam a simple shift pattern on LED
 
