@@ -16,7 +16,7 @@
 
 ## Connect LEDs and interrupts
 
-Like session_5 we should connect 8 LEDs to `PB`.
+Like session_7 we should connect 8 LEDs to `PB`.
 We connect two interrupts to `PD2` and `PD3`.
 So the result would be something like below:
 
@@ -25,12 +25,12 @@ So the result would be something like below:
 ## Progam a simple shift pattern on LED
 
 First step is to program a simple shift pattern on LED that we learned  
-on **session_4**.
+on **session_7**.
 
 ## Add external intrrupt to it
 
 Then we add an `External Interupt` to it which we also learned in
-**session_4**
+**session_7**
 
 ## Time Interrupt
 
