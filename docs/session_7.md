@@ -22,6 +22,9 @@ We can do that like below:
 
 ![s7_connecting_leds](figures/s7_connecting_leds.png)
 
+Now, write a code to turn on all the LEDs.
+After that let's talk about interrupt.
+
 ## Interrupt
 
 Interrupt is a special signal.
@@ -30,13 +33,45 @@ what he is doing right now and execute some
 special code.
 This special code is in a `Interrupt Service Routine Function`.
 
+In `ATmega32` we have 3 external interrupts
+which are connected to their special pins.
+Those pins are shown in the table below:
+
 | Interrupt0 | Interrupt1 | Interrupt2 |
 | ---------- | ---------- | ---------- |
 | PORTD2     | PORTD3     | PORTB2     |
 
-### `GICR`
+In this session, we will be working on
+`Interrupt0` and `Interrupt1`.
 
+To use these interrupts we need 3 steps:
+
+1. Tell microcontroller which interrupt we want to use
+2. Enable global interrupts
+3. Write the function
+
+Imagine you are at your house.
+There is a switch at the beggining of your house
+that has a control on whether your house has electricity
+or not.
+This switch is like our second step.
+Now with that switch on, you can turn on the light of
+each specific room that you want.
+Each specific room is like our first step.
+
+Now let's explain how to tell microcontroller
+to do each of those steps.
+
+## Step 1 (Enable specific Interrupt)
+
+To enable an specific interrupt we use a
+Register in `ATmega32` called `GICR`.
 `GICR` stands for `General Interrupt Control Register`.
+Each bit on `GICR` does a specific task.
+We only need to change bit `7` and `6`,
+To tell the microcontroller if we want to enable
+`Interrupt1` or `Interrupt2`.
+The complete table is shown below:
 
 | bit           | 7    | 6    | 5    | 4   | 3   | 2   | 1     | 0    |
 | ------------- | ---- | ---- | ---- | --- | --- | --- | ----- | ---- |
@@ -51,6 +86,98 @@ to do so we can use a code like this:
 GICR |= 1 << INT1;
 ```
 
+In the code above `INT1` is equal to `7`.
+In embedded programming to make the code more clean also
+to help us not memorizing each bit, they have made some
+special constants.
+`INT1` is one of them.
+Respectively, we have `INT0` for `interrupt0`
+
+## Step 2 (enable global interrupts)
+
+To enable global the interrupts, there is a function called
+`sei()`.
+So the only thing that we have to do is to call this function.
+Also to disable global interrupts, we can use a function called
+`cli()`.
+
+## Step 3 (Write a fucntion)
+
+To write a function for our specefic interrupt
+we can use the code below:
+
+```cpp
+ISR(INT1_vect){
+    // your code here
+}
+```
+
+* `INT0_vect`: for intrrupt 0
+* `INT1_vect`: for intrrupt 1
+
+The code that you write in this function
+will be executed, if the `interrupt1` has happened.
+For example let's write our function like below:
+
+```cpp
+ISR(INT1_vect){
+    PORTB = ~PORTB;
+}
+```
+
+In the code above, anytime `interrupt1` happens,
+the value of `PORTB` will be reverted.
+
+Now, we are ready to connect our interrupt to our
+microcontroller.
+
+## Connect Interrupt
+
+To connect an interrupt, we need to add a **switch**.
+Connect one part of the switch to the `PD3` and the other
+part to a **fixed voltage** that is **on**.
+Some thing like below:
+
+![s7_add_interrupt](figures/s7_add_interrupt.png)
+
+## Test our code on simulation
+
+Now we have a code like below:
+
+```cpp
+#include <Arduino.h>
+
+ISR(INT1_vect)
+{
+  PORTB = ~PORTB;
+}
+
+void setup()
+{
+  DDRB = 0xFF;
+
+  GICR |= (1 << INT1);
+
+  sei();
+}
+
+void loop()
+{
+}
+```
+
+In the code above we have implemented everything that we said before.
+And we expect that, every time that we apply an interrupt,
+LEDs toggle.
+If they are on, they should become off and vice versa.
+
+But the output would be somethings like below:
+
+![s7_led_without_mcucr](figures/s7_led_without_mcucr.gif)
+
+As you can see, anytime I press a key the output would be random.
+To fix this issue we should know another registed called `MCUCR`.
+
 ### `MCUCR`
 
 `MCUCR` stands for `MCU Control Register`.
@@ -64,91 +191,50 @@ As you can see we can config our Interrupt to happen in different situations.
 | Read/Write    | R/W | R/W | R/W | R/W | R/W   | R/W   | R/W   | R/W   |
 | initial value | 0   | 0   | 0   | 0   | 0     | 0     | 0     | 0     |
 
-| ISC11 | ISC10 | Description                                                |
-| ----- | ----- | ---------------------------------------------------------- |
-| 0     | 0     | The low level of INT1 generates an interrupt request.      |
-| 0     | 1     | Any logical change on INT1 generates an interrupt request. |
-| 1     | 0     | The falling edge of INT1 generates an interrupt request.   |
-| 1     | 1     | The rising edge of INT1 generates an interrupt request.    |
+| ISC11 | ISC10 | Description                                                | figure                                                     |
+| ----- | ----- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| 0     | 0     | The low level of INT1 generates an interrupt request.      | ![s7_interrupt_stage_1](figures/s7_interrupt_stages_1.jpg) |
+| 0     | 1     | Any logical change on INT1 generates an interrupt request. | ![s7_interrupt_stage_2](figures/s7_interrupt_stages_2.jpg) |
+| 1     | 0     | The falling edge of INT1 generates an interrupt request.   | ![s7_interrupt_stage_3](figures/s7_interrupt_stages_3.jpg) |
+| 1     | 1     | The rising edge of INT1 generates an interrupt request.    | ![s7_interrupt_stage_4](figures/s7_interrupt_stages_4.jpg) |
 
-| ISC01 | ISC00 | Description                                                |
-| ----- | ----- | ---------------------------------------------------------- |
-| 0     | 0     | The low level of INT0 generates an interrupt request.      |
-| 0     | 1     | Any logical change on INT0 generates an interrupt request. |
-| 1     | 0     | The falling edge of INT0 generates an interrupt request.   |
-| 1     | 1     | The rising edge of INT0 generates an interrupt request.    |
+| ISC01 | ISC00 | Description                                                | figures                                                    |
+| ----- | ----- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| 0     | 0     | The low level of INT0 generates an interrupt request.      | ![s7_interrupt_stage_1](figures/s7_interrupt_stages_1.jpg) |
+| 0     | 1     | Any logical change on INT0 generates an interrupt request. | ![s7_interrupt_stage_2](figures/s7_interrupt_stages_2.jpg) |
+| 1     | 0     | The falling edge of INT0 generates an interrupt request.   | ![s7_interrupt_stage_3](figures/s7_interrupt_stages_3.jpg) |
+| 1     | 1     | The rising edge of INT0 generates an interrupt request.    | ![s7_interrupt_stage_4](figures/s7_interrupt_stages_4.jpg) |
 
-### `MCUCSR`
+### Set interrupt request mode
 
-`MCUCSR` stands for `MCU Control and Status Register`.
-The only thing that we should know in this table is `ISC2`.
-This register can handle how `interrup2` will be triggerd
-(Falling edge or rising edge).
-
-| bit           | 7   | 6    | 5   | 4       | 3       | 2       | 1       | 0       |
-| ------------- | --- | ---- | --- | ------- | ------- | ------- | ------- | ------- |
-| name          | JTD | ISC2 | -   | JTRF    | WDRF    | BORF    | EXTRF   | PORF    |
-| Read/Write    | R/W | R/W  | R   | R/W     | R/W     | R/W     | R/W     | R/W     |
-| initial value | 0   | 0    | 0   | depends | depends | depends | depends | depends |
-
-### `GIFR`
-
-`GIFR` stands for `General Interrupt Flag Register`.
-When an interrupt happens, a corresponding index of
-this register will be set to 1.
-If we write 1 to any of the indexes manually, we
-can clear the flag.
-
-| bit           | 7     | 6     | 5     | 4   | 3   | 2   | 1   | 0   |
-| ------------- | ----- | ----- | ----- | --- | --- | --- | --- | --- |
-| name          | INTF1 | INTF0 | INTF2 | -   | -   | -   | -   | -   |
-| Read/Write    | R/W   | R/W   | R/W   | R   | R   | R   | R   | R   |
-| initial value | 0     | 0     | 0     | 0   | 0   | 0   | 0   | 0   |
-
-### Interrupt Service Routine Function
-
-We can define a function for our external interrupt
-like below:
-
-* `INT0_vect`: for intrrupt 0
-* `INT1_vect`: for intrrupt 1
+Now we know the problem was because of the interrupt being sent
+all the time we were holding the interrupt button, we can fix it.
+Know we put our `interrupt1` in the rising edge mode with the code below:
 
 ```cpp
-ISR(INT1_vect){
-    // your code here
-}
+MCUCR |= (1 << ISC10);
+MCUCR |= (1 << ISC11);
 ```
 
-### sei
+After testing our code again the output would be something like below:
 
-`sei` enables the global interrupts.
-We can use it like the code below:
+![s7_led_with_mcucr](figures/s7_led_with_mcucr.gif)
 
-```cpp
-sei()
-```
-
-### cli
-
-`cli` disables the global interrupts.
-We can use it like the code below:
-
-```c
-cli()
-```
-
-## Connect Interrupt
-
-To connect an interrupt, we need to add a **switch**.
-Connect one part of the switch to the `PD3` and the other
-part to a **fixed voltage** that is **on**.
-Some thing like below:
-
-![s7_add_interrupt](figures/s7_add_interrupt.png)
+As you can see anytime we press the key an interrupt will be sent.
 
 ## Write a counter on LEDs and control them with `Interrupt1`
 
 Now we can write a counter on LEDs which is incrementing until
 we press `Interrupt1`.
-Then when we press `Interrupt1` again, incrementing continues.
-Like the gif in the **Goal** section.
+When `Interrupt1` is pressed, it resets and increamention starts
+from the begining.
+
+## Add `Interrupt0`
+
+Now add the `Interrupt0` to pause the increament.
+And if you want a bonus point do the pattern in the bonus section.
+
+:::{note}
+To see all the registers related to Interrupts you can refer to
+notes section in this tutorial or you can refer to the `ATmega32` datasheet.
+:::
