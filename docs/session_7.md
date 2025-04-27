@@ -105,6 +105,20 @@ can clear the flag.
 | Read/Write    | R/W   | R/W   | R/W   | R   | R   | R   | R   | R   |
 | initial value | 0     | 0     | 0     | 0   | 0   | 0   | 0   | 0   |
 
+### Interrupt Service Routine Function
+
+We can define a function for our external interrupt
+like below:
+
+* `INT0_vect`: for intrrupt 0
+* `INT1_vect`: for intrrupt 1
+
+```cpp
+ISR(INT1_vect){
+    // your code here
+}
+```
+
 ### sei
 
 `sei` enables the global interrupts.
