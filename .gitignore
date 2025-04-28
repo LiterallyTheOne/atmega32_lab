@@ -6,3 +6,4 @@ docs/_build
 simulations/s4_show_data.sim1
 src/s4_show_data.cpp
 src/s7_interrupt_bonus.cpp
+src/s6_calculator.cpp
