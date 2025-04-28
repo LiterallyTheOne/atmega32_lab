@@ -12,7 +12,7 @@
 
 ## Bonus
 
-* TIMER1: does another pattern
+![s8_bonus](figures/s8_bonus.gif)
 
 ## Connect LEDs and interrupts
 
