@@ -1,0 +1,51 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-128,-52" rotation="-90" hflip="1" vflip="1" label="mega32-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../../Documents/PlatformIO/Projects/test_led_one_pin/.pio/build/ATmega32/firmware.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-2" mainComp="false" Show_id="false" Show_Val="false" Pos="-40,-16" rotation="-180" hflip="1" vflip="1" label="Fixed Voltage-2" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Led" CircId="Led-3" mainComp="false" Show_id="false" Show_Val="false" Pos="-104,56" rotation="90" hflip="1" vflip="1" label="Led-3" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="Led" CircId="Led-4" mainComp="false" Show_id="false" Show_Val="false" Pos="-84,56" rotation="90" hflip="1" vflip="1" label="Led-4" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="Ground" CircId="Ground-9" mainComp="false" Show_id="false" Show_Val="false" Pos="-84,160" rotation="0" hflip="1" vflip="1" label="Ground-9" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="RelaySPST" CircId="RelaySPST-11" mainComp="false" Show_id="false" Show_Val="false" Pos="-184,68" rotation="0" hflip="1" vflip="1" label="RelaySPST-11" idLabPos="-16,8" labelrot="0" valLabPos="-16,6" valLabRot="0" Norm_Close="false" DT="false" Poles="1" IOn="20 mA" IOff="10 mA" Inductance="100 mH" Rcoil="100 Ω" ReaStep="0 ns" />
+
+<item itemtype="Ground" CircId="Ground-12" mainComp="false" Show_id="false" Show_Val="false" Pos="-168,128" rotation="0" hflip="1" vflip="1" label="Ground-12" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Ground" CircId="Ground-13" mainComp="false" Show_id="false" Show_Val="false" Pos="-168,252" rotation="0" hflip="1" vflip="1" label="Ground-13" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="RelaySPST" CircId="RelaySPST-14" mainComp="false" Show_id="false" Show_Val="false" Pos="-184,192" rotation="0" hflip="1" vflip="1" label="RelaySPST-14" idLabPos="-16,8" labelrot="0" valLabPos="-16,6" valLabRot="0" Norm_Close="false" DT="false" Poles="1" IOn="20 mA" IOff="10 mA" Inductance="100 mH" Rcoil="100 Ω" ReaStep="0 ns" />
+
+<item itemtype="Node" CircId="Node-10" mainComp="false" Pos="-84,128" />
+
+<item itemtype="Node" CircId="Node-15" mainComp="false" Pos="-212,52" />
+
+<item itemtype="Connector" uid="Connector-1" startpinid="Fixed Voltage-2-outnod" endpinid="mega32-1-RST" pointList="-56,-16,-56,-44" />
+
+<item itemtype="Connector" uid="Connector-8" startpinid="Led-4-rPin" endpinid="Node-10-1" pointList="-84,72,-84,128" />
+
+<item itemtype="Connector" uid="Connector-9" startpinid="Led-3-rPin" endpinid="Node-10-0" pointList="-104,72,-104,128,-84,128" />
+
+<item itemtype="Connector" uid="Connector-10" startpinid="Node-10-2" endpinid="Ground-9-Gnd" pointList="-84,128,-84,144" />
+
+<item itemtype="Connector" uid="Connector-11" startpinid="mega32-1-PORTA0" endpinid="RelaySPST-11-inductor-lPin" pointList="-120,-108,-120,-128,-224,-128,-224,68,-200,68" />
+
+<item itemtype="Connector" uid="Connector-12" startpinid="RelaySPST-11-inductor-rPin" endpinid="Ground-12-Gnd" pointList="-168,68,-168,112" />
+
+<item itemtype="Connector" uid="Connector-15" startpinid="RelaySPST-11-switch0pinN" endpinid="Led-3-lPin" pointList="-168,52,-136,52,-136,8,-104,8,-104,40" />
+
+<item itemtype="Connector" uid="Connector-19" startpinid="RelaySPST-14-inductor-rPin" endpinid="Ground-13-Gnd" pointList="-168,192,-168,236" />
+
+<item itemtype="Connector" uid="Connector-20" startpinid="mega32-1-PORTA1" endpinid="RelaySPST-14-inductor-lPin" pointList="-112,-108,-112,-132,-244,-132,-244,192,-200,192" />
+
+<item itemtype="Connector" uid="Connector-21" startpinid="Node-15-1" endpinid="RelaySPST-14-pinP2" pointList="-212,52,-212,176,-200,176" />
+
+<item itemtype="Connector" uid="Connector-22" startpinid="mega32-1-PORTB0" endpinid="Node-15-0" pointList="-120,-44,-120,-8,-212,-8,-212,52" />
+
+<item itemtype="Connector" uid="Connector-23" startpinid="Node-15-2" endpinid="RelaySPST-11-pinP2" pointList="-212,52,-200,52" />
+
+<item itemtype="Connector" uid="Connector-24" startpinid="RelaySPST-14-switch0pinN" endpinid="Led-4-lPin" pointList="-168,176,-48,176,-48,16,-84,16,-84,40" />
+
+</circuit>
