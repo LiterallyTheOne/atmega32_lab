@@ -1,8 +1,8 @@
 #include <Arduino.h>
 #include <lcd_library.h>
 
-uint8_t adc0_value = 0;
-uint8_t adc1_value = 0;
+uint16_t adc0_value = 0;
+uint16_t adc1_value = 0;
 
 char adc0_str[4];
 char adc1_str[4];
@@ -15,7 +15,7 @@ void init_adc()
     ADCSRA |= (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0);
 }
 
-uint8_t read_adc(uint8_t channel)
+uint16_t read_adc(uint8_t channel)
 {
     ADMUX &= 0xE0;
     ADMUX |= channel;

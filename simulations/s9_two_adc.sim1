@@ -1,10 +1,10 @@
 <circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
 
-<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-176,-112" rotation="-90" hflip="1" vflip="1" label="mega32-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="Users/ramin/Documents/PlatformIO/Projects/s9_two_adc/.pio/build/ATmega32/firmware.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
+<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-176,-112" rotation="-90" hflip="1" vflip="1" label="mega32-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../../../../Documents/PlatformIO/Projects/s9_two_adc/.pio/build/ATmega32/firmware.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
 
-<item itemtype="Potentiometer" CircId="Potentiometer-2" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-344,-236" rotation="0" hflip="1" vflip="1" label="Potentiometer-2" idLabPos="-16,-40" labelrot="0" valLabPos="15,-20" valLabRot="0" Resistance="1 kΩ" Value_Ohm="682 Ω" Slider="false" Scale="1" />
+<item itemtype="Potentiometer" CircId="Potentiometer-2" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-344,-236" rotation="0" hflip="1" vflip="1" label="Potentiometer-2" idLabPos="-16,-40" labelrot="0" valLabPos="15,-20" valLabRot="0" Resistance="1 kΩ" Value_Ohm="21 Ω" Slider="false" Scale="1" />
 
-<item itemtype="Potentiometer" CircId="Potentiometer-3" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-344,-312" rotation="0" hflip="1" vflip="1" label="Potentiometer-3" idLabPos="-16,-40" labelrot="0" valLabPos="15,-20" valLabRot="0" Resistance="1 kΩ" Value_Ohm="512 Ω" Slider="false" Scale="1" />
+<item itemtype="Potentiometer" CircId="Potentiometer-3" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-344,-312" rotation="0" hflip="1" vflip="1" label="Potentiometer-3" idLabPos="-16,-40" labelrot="0" valLabPos="15,-20" valLabRot="0" Resistance="1 kΩ" Value_Ohm="0 Ω" Slider="false" Scale="1" />
 
 <item itemtype="Ground" CircId="Ground-4" mainComp="false" Show_id="false" Show_Val="false" Pos="-304,-52" rotation="0" hflip="1" vflip="1" label="Ground-4" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
 
