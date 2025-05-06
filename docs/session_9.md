@@ -30,7 +30,7 @@ We are connecting those pins like this:
 
 `PWM` (Pulse Width Modulation), is a technique for controlling the power delivered to a component.  
 In this technique we use different width of pulses in a signal.
-These signals swith between `0` and `1`.
+These signals switch between `0` and `1`.
 The percentage of the time that a pulse is `1` is called **duty cycle**.
 The pictures below show two examples of 100Hz `PWM`, one with the 30% duty cycle and the other 60%.
 
@@ -91,10 +91,10 @@ $$
 f_{PWM} = \frac{f_{clk}}{N \times (1 + ICR1)}
 $$
 
-* \(f_{PWM}\): desired frequency
-* \(f_{clk}\): clock frequency
-* \(N\): prescaler
-* \(ICR1\): value of `ICR1` register
+* $f_{PWM}$: desired frequency
+* $f_{clk}$: clock frequency
+* $N$: prescaler
+* $ICR1$: value of `ICR1` register
 
 ### `TCCR1A` and `TCCR1B`
 
